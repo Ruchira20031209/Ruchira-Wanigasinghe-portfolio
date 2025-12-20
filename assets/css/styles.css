@@ -18,7 +18,7 @@
          -> Choose any color 
          -> Copy the color mode (HSL)
   */
-  --hue: 260;
+  --hue: 600;
   --first-color: hsl(var(--hue), 60%, 64%);
   --first-color-alt: hsl(var(--hue), 80%, 56%);
   --first-color-alt-2: hsl(var(--hue), 60%, 56%);
