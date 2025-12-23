@@ -1,0 +1,675 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3.5rem;
+    --hue: 600;
+    --first-color: hsl(var(--hue), 60%, 64%);
+    --first-color-alt: hsl(var(--hue), 80%, 56%);
+    --first-color-alt-2: hsl(var(--hue), 60%, 56%);
+    --first-color-light: hsl(var(--hue), 60%, 74%);
+    --title-color: hsl(240, 8%, 95%);
+    --text-color: hsl(240, 8%, 70%);
+    --text-color-light: hsl(240, 8%, 50%);
+    --body-color: hsl(240, 100%, 2%);
+    --container-color: hsl(240, 8%, 6%);
+    --cv-bg: hsl(240, 8%, 8%);
+    --cv-border: hsl(240, 8%, 12%);
+
+    /*========== Font and typography ==========*/
+    --body-font: "Montserrat", sans-serif;
+    --second-font: "Unbounded", sans-serif;
+    --biggest-font-size: 2rem;
+    --bigger-font-size: 1.5rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.1rem;
+    --normal-font-size: 0.95rem;
+    --small-font-size: 0.85rem;
+    --smaller-font-size: 0.75rem;
+
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    color: var(--title-color);
+    font-family: var(--second-font);
+    font-weight: var(--font-semi-bold);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*=============== BLOB ANIMATIONS ===============*/
+.blob-animate {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(180deg,
+                var(--first-color-alt) 20%,
+                var(--first-color-light) 100%);
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(60px);
+    z-index: -1;
+    animation: animateBlob 15s linear infinite;
+    opacity: 0.2;
+}
+
+.blob-2 {
+    width: 250px;
+    height: 250px;
+    right: 10%;
+    bottom: 10%;
+    animation: animateBlob2 20s linear infinite;
+    background: linear-gradient(180deg,
+                var(--first-color-light) 20%,
+                var(--first-color) 100%);
+}
+
+@keyframes animateBlob {
+    0% {
+        transform: rotate(0deg) translateX(50px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(50px) rotate(-360deg);
+    }
+}
+
+@keyframes animateBlob2 {
+    0% {
+        transform: rotate(0deg) translateY(50px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateY(50px) rotate(-360deg);
+    }
+}
+
+/*=============== CUSTOM CURSOR ===============*/
+.cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    width: 20px;
+    height: 20px;
+    background-color: var(--first-color-light);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--first-color);
+    mix-blend-mode: difference;
+    pointer-events: none;
+    transition: transform 0.1s ease-out,
+                left 0.1s ease-out,
+                top 0.1s ease-out;
+}
+
+/*=============== CV CONTAINER ===============*/
+.cv-container {
+    max-width: 900px;
+    width: 100%;
+    background-color: var(--cv-bg);
+    border: 1px solid var(--cv-border);
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+/*=============== HEADER ===============*/
+.cv-header {
+    padding: 2.5rem;
+    background: linear-gradient(135deg,
+                hsla(var(--hue), 60%, 12%, 0.8) 0%,
+                hsla(var(--hue), 60%, 6%, 0.9) 100%);
+    border-bottom: 2px solid var(--first-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.cv-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg,
+                var(--first-color),
+                var(--first-color-alt),
+                var(--first-color));
+}
+
+.header-content {
+    margin-bottom: 1.5rem;
+}
+
+.cv-name {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg,
+                var(--title-color),
+                var(--first-color-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cv-title {
+    font-size: 1.3rem;
+    color: var(--first-color);
+    font-weight: var(--font-medium);
+    margin-bottom: 1.5rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--small-font-size);
+}
+
+.contact-item i {
+    color: var(--first-color);
+    font-size: 1.1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: hsla(var(--hue), 60%, 12%, 0.8);
+    border: 1px solid var(--first-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--title-color);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: var(--first-color);
+    color: var(--body-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--first-color);
+}
+
+/*=============== SECTIONS ===============*/
+.cv-section {
+    padding: 2rem 2.5rem;
+    border-bottom: 1px solid var(--cv-border);
+}
+
+.cv-section:last-of-type {
+    border-bottom: none;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.section-title {
+    font-size: var(--h2-font-size);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--first-color);
+    padding-right: 1rem;
+    background-color: var(--cv-bg);
+    position: relative;
+    z-index: 2;
+}
+
+.section-line {
+    flex-grow: 1;
+    height: 2px;
+    background: linear-gradient(90deg,
+                var(--first-color),
+                transparent);
+    position: relative;
+}
+
+.section-line::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -2px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--first-color);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--first-color);
+}
+
+.section-content {
+    padding-left: 0.5rem;
+}
+
+/*=============== PROFILE ===============*/
+.profile-text {
+    font-size: var(--normal-font-size);
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.profile-text b {
+    color: var(--first-color);
+    font-weight: var(--font-semi-bold);
+}
+
+/*=============== EDUCATION & WORK ===============*/
+.education-item,
+.work-item {
+    display: flex;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.education-item:last-child,
+.work-item:last-child {
+    margin-bottom: 0;
+}
+
+.education-item::before,
+.work-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 10px;
+    height: 10px;
+    background-color: var(--first-color);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--first-color);
+}
+
+.edu-date,
+.work-date {
+    min-width: 120px;
+    font-weight: var(--font-semi-bold);
+    color: var(--first-color);
+    font-family: var(--second-font);
+    font-size: var(--small-font-size);
+}
+
+.edu-details,
+.work-details {
+    flex: 1;
+}
+
+.edu-degree,
+.work-position {
+    font-size: var(--h3-font-size);
+    margin-bottom: 0.3rem;
+    color: var(--title-color);
+}
+
+.edu-institution,
+.work-description {
+    font-size: var(--normal-font-size);
+    margin-bottom: 0.3rem;
+    color: var(--text-color);
+}
+
+.edu-specialization {
+    font-size: var(--small-font-size);
+    color: var(--text-color-light);
+    font-style: italic;
+}
+
+/*=============== PROJECTS ===============*/
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background-color: var(--container-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 1px solid var(--cv-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(103, 58, 183, 0.2);
+    border-color: var(--first-color);
+}
+
+.project-number {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2.5rem;
+    font-family: var(--second-font);
+    color: var(--first-color);
+    opacity: 0.2;
+    font-weight: var(--font-bold);
+}
+
+.project-content {
+    position: relative;
+    z-index: 1;
+}
+
+.project-title {
+    font-size: var(--h3-font-size);
+    margin-bottom: 0.8rem;
+    color: var(--title-color);
+}
+
+.project-description {
+    font-size: var(--small-font-size);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tag {
+    background-color: hsla(var(--hue), 60%, 12%, 0.8);
+    color: var(--first-color-light);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: var(--smaller-font-size);
+    font-family: var(--second-font);
+    border: 1px solid var(--first-color);
+}
+
+/*=============== SKILLS ===============*/
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skills-category {
+    background-color: var(--container-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--cv-border);
+}
+
+.skills-title {
+    font-size: var(--h3-font-size);
+    color: var(--first-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--cv-border);
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.skill-item {
+    background-color: hsla(var(--hue), 60%, 12%, 0.8);
+    color: var(--title-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: var(--small-font-size);
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    border-color: var(--first-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(103, 58, 183, 0.2);
+}
+
+/*=============== ACTIONS ===============*/
+.cv-actions {
+    padding: 1.5rem 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    background-color: var(--container-color);
+    border-top: 1px solid var(--cv-border);
+}
+
+.action-btn {
+    background-color: var(--body-color);
+    border: 2px solid var(--first-color);
+    color: var(--title-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-family: var(--second-font);
+    font-weight: var(--font-semi-bold);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.action-btn:hover {
+    background-color: var(--first-color);
+    color: var(--body-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--first-color);
+}
+
+.action-btn i {
+    font-size: 1.1rem;
+}
+
+/*=============== FOOTER ===============*/
+.cv-footer {
+    padding: 1.5rem 2.5rem;
+    text-align: center;
+    background-color: var(--container-color);
+    border-top: 1px solid var(--cv-border);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--small-font-size);
+    color: var(--text-color-light);
+}
+
+.footer-content p:first-child span {
+    color: var(--first-color);
+    font-family: var(--second-font);
+}
+
+/*=============== RESPONSIVE DESIGN ===============*/
+@media screen and (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .cv-container {
+        border-radius: 10px;
+    }
+    
+    .cv-header {
+        padding: 1.5rem;
+    }
+    
+    .cv-name {
+        font-size: 2rem;
+    }
+    
+    .cv-title {
+        font-size: 1.1rem;
+    }
+    
+    .cv-section {
+        padding: 1.5rem;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .education-item,
+    .work-item {
+        flex-direction: column;
+        padding-left: 1rem;
+    }
+    
+    .edu-date,
+    .work-date {
+        margin-bottom: 0.5rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .cv-actions {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cv-name {
+        font-size: 1.7rem;
+    }
+    
+    .cv-title {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: var(--h3-font-size);
+    }
+    
+    .action-btn {
+        padding: 0.6rem 1rem;
+        font-size: var(--small-font-size);
+    }
+}
+
+/*=============== PRINT STYLES ===============*/
+@media print {
+    body {
+        background-color: white;
+        padding: 0;
+    }
+    
+    .cursor,
+    .blob-animate,
+    .social-links,
+    .cv-actions {
+        display: none !important;
+    }
+    
+    .cv-container {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        border-radius: 0;
+        max-width: 100%;
+    }
+    
+    .cv-header {
+        background: white !important;
+        border-bottom: 2px solid #333;
+    }
+    
+    .cv-name {
+        background: none;
+        -webkit-text-fill-color: black;
+        color: black;
+    }
+    
+    .cv-title,
+    .section-title,
+    .contact-item i {
+        color: #333 !important;
+    }
+    
+    .cv-section {
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .project-card,
+    .skills-category {
+        border: 1px solid #ddd;
+        box-shadow: none;
+    }
+    
+    .social-link:hover,
+    .action-btn:hover,
+    .skill-item:hover,
+    .project-card:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+    
+    .footer-content {
+        color: #666;
+    }
+}
