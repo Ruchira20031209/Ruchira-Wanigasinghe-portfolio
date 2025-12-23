@@ -216,3 +216,19 @@ sr.reveal(`.home__social, .home__cv`, {delay: 1500})
 sr.reveal(`.about__data`, {origin: 'left'})
 sr.reveal(`.about__image`, {origin: 'right'})
 sr.reveal(`.services__card`, {interval: 100})
+
+// Add this to main.js at the end of the file
+/*=============== SMOOTH PAGE TRANSITION ===============*/
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if coming from CV page
+    if (document.referrer.includes('cv-index.html')) {
+        // Add a class for animation
+        document.body.classList.add('page-transition');
+        
+        // Scroll to top smoothly
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+});
