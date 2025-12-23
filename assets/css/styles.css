@@ -683,6 +683,22 @@ animation: animateBlob 5s linear infinite;
   color: var(--first-color);
 }
 
+/* Add this to styles.css around line 700-720 */
+.page-transition {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /*=============== SERVICES ===============*/
 .services__container{
   row-gap: 2rem;
@@ -984,6 +1000,8 @@ animation: animateBlob 5s linear infinite;
     grid-template-columns: repeat(2, 350px);
     align-items: flex-start;
   }
+
+  
 }
 
 /* For large devices */
