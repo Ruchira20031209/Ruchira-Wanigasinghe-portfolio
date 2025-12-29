@@ -584,6 +584,61 @@ animation: animateBlob 5s linear infinite;
   transition: opacity .4s;
 }
 
+/*=============== VIEW ALL BUTTON ===============*/
+.view-all-button {
+    background: var(--container-color);
+    border: 3px solid var(--first-color);
+    color: var(--title-color);
+    padding: 1rem 2.5rem;
+    box-shadow: 0 8px 32px hsla(var(--hue), 60%, 64%, 0.3);
+    border-radius: 4rem;
+    font-family: var(--second-font);
+    font-weight: var(--font-semi-bold);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.view-all-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--first-color);
+    transition: width 0.4s ease;
+    z-index: -1;
+    border-radius: 4rem;
+}
+
+.view-all-button:hover {
+    color: var(--body-color);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px hsla(var(--hue), 60%, 64%, 0.5);
+}
+
+.view-all-button:hover::before {
+    width: 100%;
+}
+
+.view-all-button i {
+    font-size: 1.25rem;
+    transition: transform 0.4s ease;
+}
+
+.view-all-button:hover i {
+    transform: translateX(5px);
+}
+
+.view-all-container {
+    padding-top: 1rem;
+}
+
 /*=============== WORK ===============*/
 .work__tabs{
   background-color: var(--container-color);
