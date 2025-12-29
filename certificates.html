@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ruchira Wanigasinghe - Certificates & Projects Portfolio">
+    <meta name="keywords" content="Certificates, Projects, Portfolio, Web Development, UI/UX Design">
+    <meta name="author" content="Ruchira Wanigasinghe">
+    
+    <!-- Same as your portfolio -->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link href="https://fonts.cdnfonts.com/css/ica-rubrik-black" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <title>Certificates & Projects | Ruchira Wanigasinghe</title>
+    
+    <style>
+        /* Same CSS as before, but adjusted for HTML version */
+        .gallery-section {
+            padding: 4rem 0;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: var(--container-color);
+            border: 2px solid var(--first-color);
+            color: var(--title-color);
+            padding: 0.75rem 2rem;
+            border-radius: 2rem;
+            font-family: var(--second-font);
+            font-weight: var(--font-semi-bold);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active {
+            background: var(--first-color);
+            color: var(--body-color);
+        }
+        
+        .filter-btn:hover {
+            background: var(--first-color);
+            color: var(--body-color);
+            transform: translateY(-3px);
+        }
+        
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .gallery-item {
+            background: var(--container-color);
+            border-radius: 2rem;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--first-color);
+        }
+        
+        .gallery-content {
+            padding: 1.5rem;
+        }
+        
+        .gallery-title {
+            font-size: var(--h2-font-size);
+            margin-bottom: 0.5rem;
+            color: var(--title-color);
+        }
+        
+        .gallery-description {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            font-size: var(--small-font-size);
+        }
+        
+        .gallery-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .gallery-category {
+            background: var(--first-color);
+            color: var(--body-color);
+            padding: 0.25rem 1rem;
+            border-radius: 1rem;
+            font-size: var(--smaller-font-size);
+            font-family: var(--second-font);
+        }
+        
+        .gallery-year {
+            color: var(--first-color-light);
+            font-weight: var(--font-semi-bold);
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            grid-column: 1 / -1;
+        }
+        
+        .empty-state i {
+            font-size: 4rem;
+            color: var(--first-color);
+            margin-bottom: 1rem;
+        }
+        
+        .admin-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--first-color);
+            color: var(--body-color);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 100;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .admin-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            color: var(--body-color);
+        }
+
+                /* Back to Portfolio Section */
+        .back-section {
+            text-align: center;
+            padding-top: 0;
+            padding-bottom: 4rem;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: var(--normal-font-size);
+            padding: 1rem 2.5rem;
+            background: var(--container-color);
+            border: 3px solid var(--first-color);
+            color: var(--title-color);
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background: var(--first-color);
+            color: var(--body-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .back-button i {
+            font-size: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .back-button:hover i {
+            transform: translateX(-5px);
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .admin-btn {
+                bottom: 1rem;
+                right: 1rem;
+                width: 50px;
+                height: 50px;
+                font-size: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-buttons {
+                gap: 0.5rem;
+            }
+            
+            .filter-btn {
+                padding: 0.5rem 1.5rem;
+                font-size: var(--small-font-size);
+            }
+        }
+        
+        /* Modal for Admin */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: var(--container-color);
+            padding: 2rem;
+            border-radius: 2rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border: 2px solid var(--first-color);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-title {
+            font-size: var(--h2-font-size);
+            color: var(--title-color);
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            color: var(--first-color);
+        }
+        
+        .modal-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--title-color);
+            font-weight: var(--font-medium);
+        }
+        
+        .modal-form input,
+        .modal-form textarea,
+        .modal-form select {
+            width: 100%;
+            padding: 0.875rem;
+            background: var(--body-color);
+            border: 2px solid var(--first-color);
+            border-radius: 1rem;
+            color: var(--title-color);
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+        }
+        
+        .modal-form textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .btn-save, .btn-cancel {
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            font-family: var(--second-font);
+            font-weight: var(--font-semi-bold);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            flex: 1;
+        }
+        
+        .btn-save {
+            background: var(--first-color);
+            color: var(--body-color);
+        }
+        
+        .btn-cancel {
+            background: #6b7280;
+            color: white;
+        }
+        
+        .btn-save:hover {
+            background: var(--first-color-alt);
+            transform: translateY(-3px);
+        }
+        
+        .btn-cancel:hover {
+            background: #4b5563;
+            transform: translateY(-3px);
+        }
+        
+        .password-protected {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .password-input {
+            margin: 1rem 0;
+            padding: 1rem;
+            width: 100%;
+            max-width: 300px;
+            border: 2px solid var(--first-color);
+            border-radius: 1rem;
+            background: var(--body-color);
+            color: var(--title-color);
+        }
+        
+        /* Toast notifications */
+        .toast {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            background: var(--first-color);
+            color: var(--body-color);
+            z-index: 1001;
+            transform: translateX(150%);
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .toast.show {
+            transform: translateX(0);
+        }
+        
+        .toast.success {
+            background: #22c55e;
+        }
+        
+        .toast.error {
+            background: #ef4444;
+        }
+        
+        .item-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .btn-edit, .btn-delete {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-family: var(--second-font);
+            font-weight: var(--font-semi-bold);
+            font-size: var(--small-font-size);
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-edit {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .btn-delete {
+            background: #ef4444;
+            color: white;
+        }
+        
+        .btn-edit:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+        
+        .btn-delete:hover {
+            background: #dc2626;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <div class="blob-animate"></div>
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">Ruchira</a>
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!-- CUSTOM CURSOR -->
+        <div class="cursor"></div>
+
+        <!--==================== CERTIFICATES GALLERY ====================-->
+        <section class="gallery-section section" id="certificates">
+            <div class="container">
+                <h2 class="section__title">
+                    My <span>Certificates</span> & <span>Projects</span>
+                </h2>
+                
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="certificate">Certificates</button>
+                    <button class="filter-btn" data-filter="project">Projects</button>
+                    <button class="filter-btn" data-filter="web">Web Development</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                </div>
+                
+                <div class="gallery-container" id="gallery-container">
+                    <!-- Content loaded from JavaScript -->
+                </div>
+            </div>
+        </section>
+
+                <!--==================== BACK TO PORTFOLIO ====================-->
+        <section class="back-section section">
+            <div class="container">
+                <a href="index.html" class="back-button button">
+                    <i class="ri-arrow-left-line"></i> Back to Portfolio
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer grid">
+        <div class="blob-animate"></div>
+        <div class="footer__copy">
+            All Rights Reserved By <span>Ruchira Wanigasinghe</span>
+        </div>
+        <div class="footer__year">
+            &#169; <span id="footer-year">2025</span>
+        </div>
+    </footer>
+    
+    <!-- Admin Button -->
+    <button class="admin-btn" id="admin-btn" title="Admin Panel">
+        <i class="ri-admin-line"></i>
+    </button>
+    
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+    
+    <!-- Admin Modal -->
+    <div class="modal" id="admin-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-title">Admin Panel</h3>
+                <button class="modal-close" id="modal-close">&times;</button>
+            </div>
+            <div id="modal-body">
+                <!-- Content loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <!-- Certificates JavaScript -->
+    <script>
+        // Sample data (you can add more items here)
+        const certificatesData = [
+            {
+                id: 1,
+                type: 'certificate',
+                title: 'Web Development Bootcamp',
+                description: 'Completed full-stack web development course with HTML, CSS, JavaScript, and React.',
+                image: 'assets/img/certificates/web-dev.jpg',
+                year: 2023,
+                category: 'certificate',
+                issuedBy: 'Udemy'
+            },
+            {
+                id: 2,
+                type: 'certificate',
+                title: 'UI/UX Design Fundamentals',
+                description: 'Learned user interface and user experience design principles and prototyping.',
+                image: 'assets/img/certificates/ui-ux.jpg',
+                year: 2023,
+                category: 'certificate',
+                issuedBy: 'Coursera'
+            },
+            {
+                id: 3,
+                type: 'certificate',
+                title: 'Java Programming',
+                description: 'Advanced Java programming concepts and object-oriented design patterns.',
+                image: 'assets/img/certificates/java.jpg',
+                year: 2024,
+                category: 'certificate',
+                issuedBy: 'SLIIT'
+            },
+            {
+                id: 4,
+                type: 'project',
+                title: 'Online Tutor Booking System',
+                description: 'Java-based web platform for finding and booking home tutors.',
+                image: 'assets/img/projects/tutor-booking.jpg',
+                year: 2023,
+                category: 'web',
+                technologies: 'Java, HTML, CSS, MySQL',
+                githubLink: 'https://github.com/Ruchira20031209/SmartTutor',
+                liveLink: ''
+            },
+            {
+                id: 5,
+                type: 'project',
+                title: 'E-commerce Website',
+                description: 'Full-featured online shopping store with cart and checkout functionality.',
+                image: 'assets/img/projects/ecommerce.jpg',
+                year: 2024,
+                category: 'web',
+                technologies: 'Java, JSP, Servlets, MySQL',
+                githubLink: 'https://github.com/Ruchira20031209/online-shopping-store.git',
+                liveLink: ''
+            },
+            {
+                id: 6,
+                type: 'project',
+                title: 'Portfolio Website Design',
+                description: 'Modern portfolio design with dark/light mode and responsive layout.',
+                image: 'assets/img/projects/portfolio-design.jpg',
+                year: 2024,
+                category: 'design',
+                technologies: 'Figma, Adobe XD',
+                githubLink: '',
+                liveLink: 'https://ruchirawanigasinghe.online'
+            }
+        ];
+
+        // Store data in localStorage
+        const STORAGE_KEY = 'portfolio_certificates';
+        const ADMIN_PASSWORD = 'admin123'; // Change this!
+
+        class CertificateManager {
+            constructor() {
+                this.items = this.loadFromStorage();
+                this.currentFilter = 'all';
+                this.isAdmin = localStorage.getItem('isAdmin') === 'true';
+                this.editingItem = null;
+                this.init();
+            }
+
+            loadFromStorage() {
+                const saved = localStorage.getItem(STORAGE_KEY);
+                if (saved) {
+                    return JSON.parse(saved);
+                }
+                // If no saved data, use sample data
+                return [...certificatesData];
+            }
+
+            saveToStorage() {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(this.items));
+            }
+
+            init() {
+                this.renderGallery();
+                this.setupEventListeners();
+                this.updateAdminButton();
+                this.setupScrollReveal();
+            }
+
+            setupEventListeners() {
+                // Filter buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                        e.target.classList.add('active');
+                        this.currentFilter = e.target.dataset.filter;
+                        this.renderGallery();
+                    });
+                });
+
+                // Admin button
+                document.getElementById('admin-btn').addEventListener('click', () => {
+                    if (this.isAdmin) {
+                        this.showAdminPanel();
+                    } else {
+                        this.showLoginPrompt();
+                    }
+                });
+
+                // Modal close
+                document.getElementById('modal-close').addEventListener('click', () => {
+                    this.hideModal();
+                });
+
+                // Close modal on outside click
+                document.getElementById('admin-modal').addEventListener('click', (e) => {
+                    if (e.target.id === 'admin-modal') {
+                        this.hideModal();
+                    }
+                });
+            }
+
+            renderGallery() {
+                const container = document.getElementById('gallery-container');
+                const filteredItems = this.filterItems();
+                
+                if (filteredItems.length === 0) {
+                    container.innerHTML = `
+                        <div class="empty-state">
+                            <i class="ri-inbox-line"></i>
+                            <h3>No items found</h3>
+                            <p>Try selecting a different filter or add new items.</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                container.innerHTML = filteredItems.map(item => this.renderItem(item)).join('');
+                
+                // Reinitialize animations
+                this.setupScrollReveal();
+            }
+
+            filterItems() {
+                if (this.currentFilter === 'all') return this.items;
+                return this.items.filter(item => {
+                    if (this.currentFilter === 'certificate') return item.type === 'certificate';
+                    if (this.currentFilter === 'project') return item.type === 'project';
+                    return item.category === this.currentFilter || item.type === this.currentFilter;
+                });
+            }
+
+            renderItem(item) {
+                if (item.type === 'certificate') {
+                    return `
+                        <div class="gallery-item" data-category="${item.type} ${item.category}">
+                            <img src="${item.image}" 
+                                 alt="${item.title}" 
+                                 class="gallery-img" 
+                                 loading="lazy"
+                                 onerror="this.src='assets/img/placeholder.png'">
+                            <div class="gallery-content">
+                                <h3 class="gallery-title">${item.title}</h3>
+                                <p class="gallery-description">${item.description}</p>
+                                <div class="gallery-meta">
+                                    <span class="gallery-category">Certificate</span>
+                                    <span class="gallery-year">${item.year}</span>
+                                </div>
+                                ${item.issuedBy ? `
+                                <p class="gallery-description" style="margin-top: 0.5rem;">
+                                    <i class="ri-award-line"></i> Issued by: ${item.issuedBy}
+                                </p>
+                                ` : ''}
+                                ${this.isAdmin ? `
+                                <div class="item-actions">
+                                    <button class="btn-edit" onclick="certificateManager.editItem(${item.id})">
+                                        <i class="ri-edit-line"></i> Edit
+                                    </button>
+                                    <button class="btn-delete" onclick="certificateManager.deleteItem(${item.id})">
+                                        <i class="ri-delete-bin-line"></i> Delete
+                                    </button>
+                                </div>
+                                ` : ''}
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    return `
+                        <div class="gallery-item" data-category="${item.type} ${item.category}">
+                            <img src="${item.image}" 
+                                 alt="${item.title}" 
+                                 class="gallery-img" 
+                                 loading="lazy"
+                                 onerror="this.src='assets/img/placeholder.png'">
+                            <div class="gallery-content">
+                                <h3 class="gallery-title">${item.title}</h3>
+                                <p class="gallery-description">${item.description}</p>
+                                ${item.technologies ? `
+                                <p class="gallery-description" style="margin: 0.5rem 0;">
+                                    <i class="ri-code-line"></i> Technologies: ${item.technologies}
+                                </p>
+                                ` : ''}
+                                <div class="gallery-meta">
+                                    <span class="gallery-category">${item.category === 'design' ? 'Design' : 'Project'}</span>
+                                    <span class="gallery-year">${item.year}</span>
+                                </div>
+                                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                                    ${item.githubLink ? `
+                                    <a href="${item.githubLink}" 
+                                       target="_blank" 
+                                       class="button" 
+                                       style="padding: 0.5rem 1rem; font-size: 0.875rem;">
+                                        <i class="ri-github-line"></i> Code
+                                    </a>
+                                    ` : ''}
+                                    ${item.liveLink ? `
+                                    <a href="${item.liveLink}" 
+                                       target="_blank" 
+                                       class="button" 
+                                       style="padding: 0.5rem 1rem; font-size: 0.875rem; background: var(--first-color-alt);">
+                                        <i class="ri-external-link-line"></i> Live
+                                    </a>
+                                    ` : ''}
+                                </div>
+                                ${this.isAdmin ? `
+                                <div class="item-actions">
+                                    <button class="btn-edit" onclick="certificateManager.editItem(${item.id})">
+                                        <i class="ri-edit-line"></i> Edit
+                                    </button>
+                                    <button class="btn-delete" onclick="certificateManager.deleteItem(${item.id})">
+                                        <i class="ri-delete-bin-line"></i> Delete
+                                    </button>
+                                </div>
+                                ` : ''}
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+
+            showToast(message, type = 'success') {
+                const toast = document.getElementById('toast');
+                toast.textContent = message;
+                toast.className = `toast ${type} show`;
+                
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 3000);
+            }
+
+            showLoginPrompt() {
+                document.getElementById('modal-title').textContent = 'Admin Login';
+                document.getElementById('modal-body').innerHTML = `
+                    <div class="password-protected">
+                        <p>This area is password protected. Please enter the admin password:</p>
+                        <input type="password" class="password-input" id="admin-password" placeholder="Enter password">
+                        <div class="modal-actions">
+                            <button class="btn-save" id="login-btn">Login</button>
+                            <button class="btn-cancel" id="cancel-login">Cancel</button>
+                        </div>
+                    </div>
+                `;
+
+                document.getElementById('login-btn').addEventListener('click', () => {
+                    const password = document.getElementById('admin-password').value;
+                    if (password === ADMIN_PASSWORD) {
+                        this.isAdmin = true;
+                        localStorage.setItem('isAdmin', 'true');
+                        this.showToast('Login successful!', 'success');
+                        this.updateAdminButton();
+                        this.showAdminPanel();
+                    } else {
+                        this.showToast('Incorrect password!', 'error');
+                    }
+                });
+
+                document.getElementById('cancel-login').addEventListener('click', () => {
+                    this.hideModal();
+                });
+
+                this.showModal();
+            }
+
+            showAdminPanel() {
+                document.getElementById('modal-title').textContent = 'Admin Panel';
+                
+                const certificateCount = this.items.filter(i => i.type === 'certificate').length;
+                const projectCount = this.items.filter(i => i.type === 'project').length;
+                
+                document.getElementById('modal-body').innerHTML = `
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="margin-bottom: 1rem; color: var(--first-color);">Statistics</h4>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem;">
+                            <div style="background: var(--body-color); padding: 1rem; border-radius: 1rem; text-align: center;">
+                                <div style="font-size: 2rem; color: var(--first-color); font-weight: bold;">${this.items.length}</div>
+                                <div style="font-size: 0.875rem; color: var(--text-color);">Total Items</div>
+                            </div>
+                            <div style="background: var(--body-color); padding: 1rem; border-radius: 1rem; text-align: center;">
+                                <div style="font-size: 2rem; color: var(--first-color); font-weight: bold;">${certificateCount}</div>
+                                <div style="font-size: 0.875rem; color: var(--text-color);">Certificates</div>
+                            </div>
+                            <div style="background: var(--body-color); padding: 1rem; border-radius: 1rem; text-align: center;">
+                                <div style="font-size: 2rem; color: var(--first-color); font-weight: bold;">${projectCount}</div>
+                                <div style="font-size: 0.875rem; color: var(--text-color);">Projects</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                        <button class="btn-save" id="add-certificate-btn" style="flex: 1;">
+                            <i class="ri-award-line"></i> Add Certificate
+                        </button>
+                        <button class="btn-save" id="add-project-btn" style="flex: 1; background: var(--first-color-alt);">
+                            <i class="ri-code-s-slash-line"></i> Add Project
+                        </button>
+                    </div>
+                    
+                    <button class="btn-cancel" id="logout-btn" style="width: 100%;">
+                        <i class="ri-logout-box-line"></i> Logout
+                    </button>
+                `;
+
+                document.getElementById('add-certificate-btn').addEventListener('click', () => {
+                    this.showAddCertificateForm();
+                });
+
+                document.getElementById('add-project-btn').addEventListener('click', () => {
+                    this.showAddProjectForm();
+                });
+
+                document.getElementById('logout-btn').addEventListener('click', () => {
+                    this.isAdmin = false;
+                    localStorage.removeItem('isAdmin');
+                    this.showToast('Logged out successfully', 'success');
+                    this.updateAdminButton();
+                    this.hideModal();
+                });
+
+                this.showModal();
+            }
+
+            showAddCertificateForm(editItem = null) {
+                this.editingItem = editItem;
+                const isEdit = !!editItem;
+                
+                document.getElementById('modal-title').textContent = isEdit ? 'Edit Certificate' : 'Add Certificate';
+                
+                document.getElementById('modal-body').innerHTML = `
+                    <form id="certificate-form" class="modal-form">
+                        <div class="form-group">
+                            <label for="cert-title">Title *</label>
+                            <input type="text" id="cert-title" required 
+                                   value="${isEdit ? editItem.title : ''}">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cert-description">Description</label>
+                            <textarea id="cert-description">${isEdit ? editItem.description : ''}</textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cert-year">Year</label>
+                            <input type="number" id="cert-year" 
+                                   value="${isEdit ? editItem.year : new Date().getFullYear()}"
+                                   min="2000" max="2030">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cert-issued-by">Issued By</label>
+                            <input type="text" id="cert-issued-by" 
+                                   value="${isEdit ? editItem.issuedBy || '' : ''}">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cert-category">Category</label>
+                            <select id="cert-category">
+                                <option value="certificate" ${isEdit && editItem.category === 'certificate' ? 'selected' : ''}>
+                                    Certificate
+                                </option>
+                                <option value="award" ${isEdit && editItem.category === 'award' ? 'selected' : ''}>
+                                    Award
+                                </option>
+                                <option value="achievement" ${isEdit && editItem.category === 'achievement' ? 'selected' : ''}>
+                                    Achievement
+                                </option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cert-image">Image URL *</label>
+                            <input type="text" id="cert-image" required 
+                                   value="${isEdit ? editItem.image : ''}"
+                                   placeholder="assets/img/certificates/your-image.jpg">
+                            <small style="color: var(--text-color-light); display: block; margin-top: 0.25rem;">
+                                Enter the path to your image (upload to assets/img/certificates/ folder)
+                            </small>
+                        </div>
+                        
+                        <div class="modal-actions">
+                            <button type="submit" class="btn-save">
+                                ${isEdit ? 'Update Certificate' : 'Add Certificate'}
+                            </button>
+                            <button type="button" class="btn-cancel" id="cancel-form">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                `;
+
+                document.getElementById('certificate-form').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.saveCertificate();
+                });
+
+                document.getElementById('cancel-form').addEventListener('click', () => {
+                    this.showAdminPanel();
+                });
+
+                this.showModal();
+            }
+
+            showAddProjectForm(editItem = null) {
+                this.editingItem = editItem;
+                const isEdit = !!editItem;
+                
+                document.getElementById('modal-title').textContent = isEdit ? 'Edit Project' : 'Add Project';
+                
+                document.getElementById('modal-body').innerHTML = `
+                    <form id="project-form" class="modal-form">
+                        <div class="form-group">
+                            <label for="proj-title">Title *</label>
+                            <input type="text" id="proj-title" required 
+                                   value="${isEdit ? editItem.title : ''}">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="proj-description">Description</label>
+                            <textarea id="proj-description">${isEdit ? editItem.description : ''}</textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="proj-technologies">Technologies</label>
+                            <input type="text" id="proj-technologies" 
+                                   value="${isEdit ? editItem.technologies || '' : ''}"
+                                   placeholder="HTML, CSS, JavaScript, PHP">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="proj-github">GitHub Link</label>
+                            <input type="url" id="proj-github" 
+                                   value="${isEdit ? editItem.githubLink || '' : ''}">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="proj-live">Live Demo Link</label>
+                            <input type="url" id="proj-live" 
+                                   value="${isEdit ? editItem.liveLink || '' : ''}">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="proj-year">Year</label>
+                            <input type="number" id="proj-year" 
+                                   value="${isEdit ? editItem.year : new Date().getFullYear()}"
+                                   min="2000" max="2030">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="proj-category">Category</label>
+                            <select id="proj-category">
+                                <option value="web" ${isEdit && editItem.category === 'web' ? 'selected' : ''}>
+                                    Web Development
+                                </option>
+                                <option value="design" ${isEdit && editItem.category === 'design' ? 'selected' : ''}>
+                                    Design
+                                </option>
+                                <option value="mobile" ${isEdit && editItem.category === 'mobile' ? 'selected' : ''}>
+                                    Mobile App
+                                </option>
+                                <option value="other" ${isEdit && editItem.category === 'other' ? 'selected' : ''}>
+                                    Other
+                                </option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="proj-image">Image URL *</label>
+                            <input type="text" id="proj-image" required 
+                                   value="${isEdit ? editItem.image : ''}"
+                                   placeholder="assets/img/projects/your-image.jpg">
+                            <small style="color: var(--text-color-light); display: block; margin-top: 0.25rem;">
+                                Enter the path to your image (upload to assets/img/projects/ folder)
+                            </small>
+                        </div>
+                        
+                        <div class="modal-actions">
+                            <button type="submit" class="btn-save">
+                                ${isEdit ? 'Update Project' : 'Add Project'}
+                            </button>
+                            <button type="button" class="btn-cancel" id="cancel-proj-form">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                `;
+
+                document.getElementById('project-form').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.saveProject();
+                });
+
+                document.getElementById('cancel-proj-form').addEventListener('click', () => {
+                    this.showAdminPanel();
+                });
+
+                this.showModal();
+            }
+
+            saveCertificate() {
+                const title = document.getElementById('cert-title').value.trim();
+                const description = document.getElementById('cert-description').value.trim();
+                const year = parseInt(document.getElementById('cert-year').value) || new Date().getFullYear();
+                const issuedBy = document.getElementById('cert-issued-by').value.trim();
+                const category = document.getElementById('cert-category').value;
+                const image = document.getElementById('cert-image').value.trim();
+
+                if (!title || !image) {
+                    this.showToast('Please fill in all required fields', 'error');
+                    return;
+                }
+
+                const certificate = {
+                    id: this.editingItem ? this.editingItem.id : Date.now(),
+                    type: 'certificate',
+                    title,
+                    description,
+                    year,
+                    category,
+                    issuedBy,
+                    image
+                };
+
+                if (this.editingItem) {
+                    const index = this.items.findIndex(item => item.id === this.editingItem.id);
+                    if (index !== -1) {
+                        this.items[index] = certificate;
+                        this.showToast('Certificate updated successfully!', 'success');
+                    }
+                } else {
+                    this.items.push(certificate);
+                    this.showToast('Certificate added successfully!', 'success');
+                }
+
+                this.saveToStorage();
+                this.renderGallery();
+                this.showAdminPanel();
+            }
+
+            saveProject() {
+                const title = document.getElementById('proj-title').value.trim();
+                const description = document.getElementById('proj-description').value.trim();
+                const technologies = document.getElementById('proj-technologies').value.trim();
+                const githubLink = document.getElementById('proj-github').value.trim();
+                const liveLink = document.getElementById('proj-live').value.trim();
+                const year = parseInt(document.getElementById('proj-year').value) || new Date().getFullYear();
+                const category = document.getElementById('proj-category').value;
+                const image = document.getElementById('proj-image').value.trim();
+
+                if (!title || !image) {
+                    this.showToast('Please fill in all required fields', 'error');
+                    return;
+                }
+
+                const project = {
+                    id: this.editingItem ? this.editingItem.id : Date.now(),
+                    type: 'project',
+                    title,
+                    description,
+                    year,
+                    category,
+                    technologies,
+                    githubLink,
+                    liveLink,
+                    image
+                };
+
+                if (this.editingItem) {
+                    const index = this.items.findIndex(item => item.id === this.editingItem.id);
+                    if (index !== -1) {
+                        this.items[index] = project;
+                        this.showToast('Project updated successfully!', 'success');
+                    }
+                } else {
+                    this.items.push(project);
+                    this.showToast('Project added successfully!', 'success');
+                }
+
+                this.saveToStorage();
+                this.renderGallery();
+                this.showAdminPanel();
+            }
+
+            editItem(id) {
+                const item = this.items.find(i => i.id === id);
+                if (!item) return;
+
+                if (item.type === 'certificate') {
+                    this.showAddCertificateForm(item);
+                } else {
+                    this.showAddProjectForm(item);
+                }
+            }
+
+            deleteItem(id) {
+                if (!confirm('Are you sure you want to delete this item?')) return;
+
+                this.items = this.items.filter(item => item.id !== id);
+                this.saveToStorage();
+                this.renderGallery();
+                this.showToast('Item deleted successfully!', 'success');
+            }
+
+            updateAdminButton() {
+                const adminBtn = document.getElementById('admin-btn');
+                adminBtn.innerHTML = this.isAdmin 
+                    ? '<i class="ri-settings-3-line"></i>' 
+                    : '<i class="ri-admin-line"></i>';
+            }
+
+            showModal() {
+                document.getElementById('admin-modal').style.display = 'flex';
+            }
+
+            hideModal() {
+                document.getElementById('admin-modal').style.display = 'none';
+                this.editingItem = null;
+            }
+
+            setupScrollReveal() {
+                const sr = ScrollReveal({
+                    origin: 'bottom',
+                    distance: '60px',
+                    duration: 1000,
+                    delay: 200,
+                    reset: false
+                });
+                
+                sr.reveal('.gallery-item', { interval: 100 });
+            }
+        }
+
+        // Initialize the certificate manager
+        const certificateManager = new CertificateManager();
+
+        // Set current year in footer
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+        // Initialize cursor and other animations from main.js
+        document.addEventListener('DOMContentLoaded', function() {
+            // Custom cursor
+            const cursor = document.querySelector('.cursor');
+            let mouseX = 0, mouseY = 0;
+
+            const cursorMove = () => {
+                if (cursor) {
+                    cursor.style.left = `${mouseX}px`;
+                    cursor.style.top = `${mouseY}px`;
+                    cursor.style.transform = 'translate(-50%, -50%)';
+                    requestAnimationFrame(cursorMove);
+                }
+            };
+
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            cursorMove();
+
+            // Hide cursor on links and images
+            const interactiveElements = document.querySelectorAll('a, button, img');
+            interactiveElements.forEach(item => {
+                item.addEventListener('mouseover', () => {
+                    if (cursor) cursor.classList.add('hide-cursor');
+                });
+                item.addEventListener('mouseleave', () => {
+                    if (cursor) cursor.classList.remove('hide-cursor');
+                });
+            });
+
+            // Active link highlighting
+            const sections = document.querySelectorAll('section[id]');
+            const scrollActive = () => {
+                const scrollY = window.scrollY;
+                
+                sections.forEach(section => {
+                    const id = section.id;
+                    const top = section.offsetTop - 50;
+                    const height = section.offsetHeight;
+                    const link = document.querySelector(`.nav__menu a[href="#${id}"]`);
+                    
+                    if (link && scrollY > top && scrollY <= top + height) {
+                        document.querySelectorAll('.nav__link').forEach(l => l.classList.remove('active-link'));
+                        link.classList.add('active-link');
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', scrollActive);
+        });
+    </script>
+</body>
+</html>
