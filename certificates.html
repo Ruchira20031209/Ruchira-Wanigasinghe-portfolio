@@ -507,8 +507,21 @@
     
     <!-- Certificates JavaScript -->
     <script>
-        // Sample data (you can add more items here)
-        const certificatesData = [
+        // Configuration
+        const GITHUB_USER = 'Ruchira20031209'; // Your GitHub username
+        const GITHUB_REPO = 'Ruchira-Wanigasinghe-portfolio'; // Your repository name
+        const GITHUB_BRANCH = 'main'; // Your default branch
+        const DATA_FILE = 'data/certificates-data.json';
+        
+        // GitHub API URLs
+        const GITHUB_RAW_URL = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${DATA_FILE}`;
+        const GITHUB_API_URL = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${DATA_FILE}`;
+        
+        // Admin configuration
+        const ADMIN_PASSWORD = 'admin123'; // CHANGE THIS TO A SECURE PASSWORD!
+        
+        // Sample data (fallback if no data found)
+        const sampleData = [
             {
                 id: 1,
                 type: 'certificate',
@@ -577,37 +590,87 @@
             }
         ];
 
-        // Store data in localStorage
-        const STORAGE_KEY = 'portfolio_certificates';
-        const ADMIN_PASSWORD = 'admin123'; // Change this!
-
         class CertificateManager {
             constructor() {
-                this.items = this.loadFromStorage();
+                this.items = [];
                 this.currentFilter = 'all';
                 this.isAdmin = localStorage.getItem('isAdmin') === 'true';
                 this.editingItem = null;
+                this.loadedFromGitHub = false;
                 this.init();
             }
 
-            loadFromStorage() {
-                const saved = localStorage.getItem(STORAGE_KEY);
-                if (saved) {
-                    return JSON.parse(saved);
-                }
-                // If no saved data, use sample data
-                return [...certificatesData];
-            }
-
-            saveToStorage() {
-                localStorage.setItem(STORAGE_KEY, JSON.stringify(this.items));
-            }
-
-            init() {
+            async init() {
+                await this.loadData();
                 this.renderGallery();
                 this.setupEventListeners();
                 this.updateAdminButton();
                 this.setupScrollReveal();
+            }
+
+            async loadData() {
+                try {
+                    console.log('Loading data from GitHub...');
+                    const response = await fetch(GITHUB_RAW_URL);
+                    
+                    if (!response.ok) {
+                        throw new Error(`GitHub responded with status: ${response.status}`);
+                    }
+                    
+                    const data = await response.json();
+                    
+                    if (data && data.items && Array.isArray(data.items)) {
+                        this.items = data.items;
+                        this.loadedFromGitHub = true;
+                        console.log('Data loaded from GitHub successfully. Items:', this.items.length);
+                        
+                        // Also save to localStorage as cache
+                        localStorage.setItem('portfolio_certificates_github', JSON.stringify({
+                            items: this.items,
+                            timestamp: new Date().getTime()
+                        }));
+                        
+                        // Update last updated display
+                        if (data.lastUpdated) {
+                            console.log(`Data last updated: ${data.lastUpdated}`);
+                        }
+                    } else {
+                        throw new Error('Invalid data format from GitHub');
+                    }
+                } catch (error) {
+                    console.warn('Error loading from GitHub, trying localStorage:', error.message);
+                    
+                    // Try to load from localStorage cache
+                    try {
+                        const cached = localStorage.getItem('portfolio_certificates_github');
+                        if (cached) {
+                            const parsed = JSON.parse(cached);
+                            // Check if cache is less than 1 hour old
+                            if (parsed.timestamp && (new Date().getTime() - parsed.timestamp) < 3600000) {
+                                this.items = parsed.items || [];
+                                console.log('Loaded from localStorage cache. Items:', this.items.length);
+                                return;
+                            }
+                        }
+                    } catch (cacheError) {
+                        console.warn('Cache error:', cacheError);
+                    }
+                    
+                    // Fallback to localStorage or sample data
+                    const saved = localStorage.getItem('portfolio_certificates');
+                    if (saved) {
+                        try {
+                            this.items = JSON.parse(saved);
+                            console.log('Loaded from local edits. Items:', this.items.length);
+                        } catch (e) {
+                            console.error('Error parsing localStorage:', e);
+                            this.items = [...sampleData];
+                        }
+                    } else {
+                        this.items = [...sampleData];
+                        console.log('Loaded sample data. Items:', this.items.length);
+                    }
+                }
             }
 
             setupEventListeners() {
@@ -678,10 +741,10 @@
                     return `
                         <div class="gallery-item" data-category="${item.type} ${item.category}">
                             <img src="${item.image}" 
-                                 alt="${item.title}" 
-                                 class="gallery-img" 
-                                 loading="lazy"
-                                 onerror="this.src='assets/img/placeholder.png'">
+                                alt="${item.title}" 
+                                class="gallery-img" 
+                                loading="lazy"
+                                onerror="this.src='assets/img/placeholder.png'">
                             <div class="gallery-content">
                                 <h3 class="gallery-title">${item.title}</h3>
                                 <p class="gallery-description">${item.description}</p>
@@ -711,10 +774,10 @@
                     return `
                         <div class="gallery-item" data-category="${item.type} ${item.category}">
                             <img src="${item.image}" 
-                                 alt="${item.title}" 
-                                 class="gallery-img" 
-                                 loading="lazy"
-                                 onerror="this.src='assets/img/placeholder.png'">
+                                alt="${item.title}" 
+                                class="gallery-img" 
+                                loading="lazy"
+                                onerror="this.src='assets/img/placeholder.png'">
                             <div class="gallery-content">
                                 <h3 class="gallery-title">${item.title}</h3>
                                 <p class="gallery-description">${item.description}</p>
@@ -730,17 +793,17 @@
                                 <div style="display: flex; gap: 1rem; margin-top: 1rem;">
                                     ${item.githubLink ? `
                                     <a href="${item.githubLink}" 
-                                       target="_blank" 
-                                       class="button" 
-                                       style="padding: 0.5rem 1rem; font-size: 0.875rem;">
+                                    target="_blank" 
+                                    class="button" 
+                                    style="padding: 0.5rem 1rem; font-size: 0.875rem;">
                                         <i class="ri-github-line"></i> Code
                                     </a>
                                     ` : ''}
                                     ${item.liveLink ? `
                                     <a href="${item.liveLink}" 
-                                       target="_blank" 
-                                       class="button" 
-                                       style="padding: 0.5rem 1rem; font-size: 0.875rem; background: var(--first-color-alt);">
+                                    target="_blank" 
+                                    class="button" 
+                                    style="padding: 0.5rem 1rem; font-size: 0.875rem; background: var(--first-color-alt);">
                                         <i class="ri-external-link-line"></i> Live
                                     </a>
                                     ` : ''}
@@ -827,14 +890,41 @@
                                 <div style="font-size: 0.875rem; color: var(--text-color);">Projects</div>
                             </div>
                         </div>
+                        
+                        <div style="background: rgba(96, 165, 250, 0.1); padding: 1rem; border-radius: 1rem; margin-bottom: 1.5rem; border: 1px solid var(--first-color);">
+                            <p style="margin: 0; color: var(--text-color); font-size: 0.875rem;">
+                                <i class="ri-information-line"></i> 
+                                ${this.loadedFromGitHub ? 
+                                    'Data loaded from GitHub. Changes saved locally until exported.' : 
+                                    'Using local data. Export to update GitHub repository.'}
+                            </p>
+                        </div>
                     </div>
                     
-                    <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
                         <button class="btn-save" id="add-certificate-btn" style="flex: 1;">
                             <i class="ri-award-line"></i> Add Certificate
                         </button>
                         <button class="btn-save" id="add-project-btn" style="flex: 1; background: var(--first-color-alt);">
                             <i class="ri-code-s-slash-line"></i> Add Project
+                        </button>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                        <button class="btn-save" id="export-data-btn" style="flex: 1; background: #8b5cf6;">
+                            <i class="ri-upload-cloud-line"></i> Export & Update GitHub
+                        </button>
+                        <button class="btn-save" id="import-data-btn" style="flex: 1; background: #10b981;">
+                            <i class="ri-download-cloud-line"></i> Import Data
+                        </button>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                        <button class="btn-save" id="refresh-data-btn" style="flex: 1; background: #f59e0b;">
+                            <i class="ri-refresh-line"></i> Refresh from GitHub
+                        </button>
+                        <button class="btn-cancel" id="reset-data-btn" style="flex: 1;">
+                            <i class="ri-restart-line"></i> Reset Local Changes
                         </button>
                     </div>
                     
@@ -849,6 +939,33 @@
 
                 document.getElementById('add-project-btn').addEventListener('click', () => {
                     this.showAddProjectForm();
+                });
+
+                document.getElementById('export-data-btn').addEventListener('click', () => {
+                    this.provideExport();
+                });
+
+                document.getElementById('import-data-btn').addEventListener('click', () => {
+                    this.showImportDialog();
+                });
+
+                document.getElementById('refresh-data-btn').addEventListener('click', async () => {
+                    await this.loadData();
+                    this.renderGallery();
+                    this.showToast('Data refreshed from GitHub!', 'success');
+                    this.showAdminPanel();
+                });
+
+                document.getElementById('reset-data-btn').addEventListener('click', () => {
+                    if (confirm('Reset all local changes and reload from GitHub? This will delete any unsaved changes.')) {
+                        localStorage.removeItem('portfolio_certificates');
+                        localStorage.removeItem('portfolio_certificates_github');
+                        this.loadData().then(() => {
+                            this.renderGallery();
+                            this.showToast('Local changes reset!', 'success');
+                            this.showAdminPanel();
+                        });
+                    }
                 });
 
                 document.getElementById('logout-btn').addEventListener('click', () => {
@@ -873,25 +990,25 @@
                         <div class="form-group">
                             <label for="cert-title">Title *</label>
                             <input type="text" id="cert-title" required 
-                                   value="${isEdit ? editItem.title : ''}">
+                                value="${isEdit ? this.escapeHtml(editItem.title) : ''}">
                         </div>
                         
                         <div class="form-group">
                             <label for="cert-description">Description</label>
-                            <textarea id="cert-description">${isEdit ? editItem.description : ''}</textarea>
+                            <textarea id="cert-description">${isEdit ? this.escapeHtml(editItem.description) : ''}</textarea>
                         </div>
                         
                         <div class="form-group">
                             <label for="cert-year">Year</label>
                             <input type="number" id="cert-year" 
-                                   value="${isEdit ? editItem.year : new Date().getFullYear()}"
-                                   min="2000" max="2030">
+                                value="${isEdit ? editItem.year : new Date().getFullYear()}"
+                                min="2000" max="2030">
                         </div>
                         
                         <div class="form-group">
                             <label for="cert-issued-by">Issued By</label>
                             <input type="text" id="cert-issued-by" 
-                                   value="${isEdit ? editItem.issuedBy || '' : ''}">
+                                value="${isEdit ? this.escapeHtml(editItem.issuedBy || '') : ''}">
                         </div>
                         
                         <div class="form-group">
@@ -912,8 +1029,8 @@
                         <div class="form-group">
                             <label for="cert-image">Image URL *</label>
                             <input type="text" id="cert-image" required 
-                                   value="${isEdit ? editItem.image : ''}"
-                                   placeholder="assets/img/certificates/your-image.jpg">
+                                value="${isEdit ? this.escapeHtml(editItem.image) : ''}"
+                                placeholder="assets/img/certificates/your-image.jpg">
                             <small style="color: var(--text-color-light); display: block; margin-top: 0.25rem;">
                                 Enter the path to your image (upload to assets/img/certificates/ folder)
                             </small>
@@ -953,38 +1070,38 @@
                         <div class="form-group">
                             <label for="proj-title">Title *</label>
                             <input type="text" id="proj-title" required 
-                                   value="${isEdit ? editItem.title : ''}">
+                                value="${isEdit ? this.escapeHtml(editItem.title) : ''}">
                         </div>
                         
                         <div class="form-group">
                             <label for="proj-description">Description</label>
-                            <textarea id="proj-description">${isEdit ? editItem.description : ''}</textarea>
+                            <textarea id="proj-description">${isEdit ? this.escapeHtml(editItem.description) : ''}</textarea>
                         </div>
                         
                         <div class="form-group">
                             <label for="proj-technologies">Technologies</label>
                             <input type="text" id="proj-technologies" 
-                                   value="${isEdit ? editItem.technologies || '' : ''}"
-                                   placeholder="HTML, CSS, JavaScript, PHP">
+                                value="${isEdit ? this.escapeHtml(editItem.technologies || '') : ''}"
+                                placeholder="HTML, CSS, JavaScript, PHP">
                         </div>
                         
                         <div class="form-group">
                             <label for="proj-github">GitHub Link</label>
                             <input type="url" id="proj-github" 
-                                   value="${isEdit ? editItem.githubLink || '' : ''}">
+                                value="${isEdit ? this.escapeHtml(editItem.githubLink || '') : ''}">
                         </div>
                         
                         <div class="form-group">
                             <label for="proj-live">Live Demo Link</label>
                             <input type="url" id="proj-live" 
-                                   value="${isEdit ? editItem.liveLink || '' : ''}">
+                                value="${isEdit ? this.escapeHtml(editItem.liveLink || '') : ''}">
                         </div>
                         
                         <div class="form-group">
                             <label for="proj-year">Year</label>
                             <input type="number" id="proj-year" 
-                                   value="${isEdit ? editItem.year : new Date().getFullYear()}"
-                                   min="2000" max="2030">
+                                value="${isEdit ? editItem.year : new Date().getFullYear()}"
+                                min="2000" max="2030">
                         </div>
                         
                         <div class="form-group">
@@ -1008,8 +1125,8 @@
                         <div class="form-group">
                             <label for="proj-image">Image URL *</label>
                             <input type="text" id="proj-image" required 
-                                   value="${isEdit ? editItem.image : ''}"
-                                   placeholder="assets/img/projects/your-image.jpg">
+                                value="${isEdit ? this.escapeHtml(editItem.image) : ''}"
+                                placeholder="assets/img/projects/your-image.jpg">
                             <small style="color: var(--text-color-light); display: block; margin-top: 0.25rem;">
                                 Enter the path to your image (upload to assets/img/projects/ folder)
                             </small>
@@ -1073,7 +1190,7 @@
                     this.showToast('Certificate added successfully!', 'success');
                 }
 
-                this.saveToStorage();
+                this.saveToLocalStorage();
                 this.renderGallery();
                 this.showAdminPanel();
             }
@@ -1117,7 +1234,7 @@
                     this.showToast('Project added successfully!', 'success');
                 }
 
-                this.saveToStorage();
+                this.saveToLocalStorage();
                 this.renderGallery();
                 this.showAdminPanel();
             }
@@ -1137,9 +1254,159 @@
                 if (!confirm('Are you sure you want to delete this item?')) return;
 
                 this.items = this.items.filter(item => item.id !== id);
-                this.saveToStorage();
+                this.saveToLocalStorage();
                 this.renderGallery();
                 this.showToast('Item deleted successfully!', 'success');
+            }
+
+            saveToLocalStorage() {
+                localStorage.setItem('portfolio_certificates', JSON.stringify(this.items));
+            }
+
+            provideExport() {
+                const data = {
+                    lastUpdated: new Date().toISOString().split('T')[0],
+                    items: this.items
+                };
+                
+                const dataStr = JSON.stringify(data, null, 2);
+                const dataBlob = new Blob([dataStr], { type: 'application/json' });
+                const dataUrl = URL.createObjectURL(dataBlob);
+                
+                document.getElementById('modal-title').textContent = 'Export & Update Instructions';
+                document.getElementById('modal-body').innerHTML = `
+                    <div style="margin-bottom: 1.5rem;">
+                        <p>To update your GitHub repository:</p>
+                        <ol style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                            <li>Download the JSON file using the button below</li>
+                            <li>Go to your GitHub repository: <a href="https://github.com/${GITHUB_USER}/${GITHUB_REPO}" target="_blank" style="color: var(--first-color);">github.com/${GITHUB_USER}/${GITHUB_REPO}</a></li>
+                            <li>Navigate to the <code>data</code> folder</li>
+                            <li>Click "Add file" → "Upload files"</li>
+                            <li>Upload the downloaded JSON file (replace if exists)</li>
+                            <li>Add commit message: "Update certificates data"</li>
+                            <li>Click "Commit changes"</li>
+                        </ol>
+                        
+                        <div style="background: rgba(96, 165, 250, 0.1); padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--first-color);">
+                            <p style="margin: 0; color: var(--text-color);">
+                                <i class="ri-lightbulb-flash-line"></i> 
+                                After uploading, wait 1-2 minutes for GitHub Pages to update.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div style="background: var(--body-color); padding: 1rem; border-radius: 1rem; margin-bottom: 1.5rem;">
+                        <h4 style="margin-bottom: 0.5rem; color: var(--first-color);">Quick Copy (Alternative):</h4>
+                        <textarea id="json-data" style="width: 100%; height: 200px; background: #1a1a1a; color: #fff; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid var(--first-color); font-family: monospace; font-size: 0.875rem; resize: vertical;" readonly>${this.escapeHtml(dataStr)}</textarea>
+                        <button id="copy-json" class="btn-save" style="width: 100%; margin-top: 0.5rem;">
+                            <i class="ri-clipboard-line"></i> Copy JSON to Clipboard
+                        </button>
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <a id="download-json" href="${dataUrl}" download="certificates-data.json" class="btn-save" style="text-decoration: none; text-align: center;">
+                            <i class="ri-download-line"></i> Download JSON File
+                        </a>
+                        <button class="btn-cancel" id="close-export">
+                            Close
+                        </button>
+                    </div>
+                `;
+
+                // Copy to clipboard
+                document.getElementById('copy-json').addEventListener('click', () => {
+                    const textarea = document.getElementById('json-data');
+                    textarea.select();
+                    textarea.setSelectionRange(0, 99999); // For mobile devices
+                    
+                    try {
+                        navigator.clipboard.writeText(textarea.value).then(() => {
+                            this.showToast('JSON copied to clipboard!', 'success');
+                        }).catch(() => {
+                            // Fallback for older browsers
+                            document.execCommand('copy');
+                            this.showToast('JSON copied to clipboard!', 'success');
+                        });
+                    } catch (err) {
+                        document.execCommand('copy');
+                        this.showToast('JSON copied to clipboard!', 'success');
+                    }
+                });
+
+                document.getElementById('close-export').addEventListener('click', () => {
+                    this.hideModal();
+                    URL.revokeObjectURL(dataUrl);
+                });
+
+                this.showModal();
+            }
+
+            showImportDialog() {
+                document.getElementById('modal-title').textContent = 'Import Data';
+                document.getElementById('modal-body').innerHTML = `
+                    <div style="margin-bottom: 1.5rem;">
+                        <p>Import data from a JSON file. This will replace all current data.</p>
+                        <div style="background: rgba(239, 68, 68, 0.1); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem; border: 1px solid rgba(239, 68, 68, 0.3);">
+                            <p style="color: #ef4444; margin: 0;">
+                                <i class="ri-error-warning-line"></i> Warning: This will replace all existing data!
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="import-file">Select JSON File</label>
+                        <input type="file" id="import-file" accept=".json" class="form-control">
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <button class="btn-save" id="confirm-import">
+                            <i class="ri-check-line"></i> Import
+                        </button>
+                        <button class="btn-cancel" id="cancel-import">
+                            Cancel
+                        </button>
+                    </div>
+                `;
+
+                document.getElementById('confirm-import').addEventListener('click', () => {
+                    const fileInput = document.getElementById('import-file');
+                    if (!fileInput.files.length) {
+                        this.showToast('Please select a file', 'error');
+                        return;
+                    }
+
+                    const file = fileInput.files[0];
+                    const reader = new FileReader();
+
+                    reader.onload = (e) => {
+                        try {
+                            const data = JSON.parse(e.target.result);
+                            if (data.items && Array.isArray(data.items)) {
+                                this.items = data.items;
+                                this.saveToLocalStorage();
+                                this.renderGallery();
+                                this.showToast('Data imported successfully!', 'success');
+                                this.showAdminPanel();
+                            } else {
+                                this.showToast('Invalid data format. Expected "items" array.', 'error');
+                            }
+                        } catch (error) {
+                            this.showToast('Error parsing JSON file. Please check format.', 'error');
+                        }
+                    };
+
+                    reader.onerror = () => {
+                        this.showToast('Error reading file', 'error');
+                    };
+
+                    reader.readAsText(file);
+                });
+
+                document.getElementById('cancel-import').addEventListener('click', () => {
+                    this.showAdminPanel();
+                });
+
+                this.showModal();
             }
 
             updateAdminButton() {
@@ -1159,15 +1426,23 @@
             }
 
             setupScrollReveal() {
-                const sr = ScrollReveal({
-                    origin: 'bottom',
-                    distance: '60px',
-                    duration: 1000,
-                    delay: 200,
-                    reset: false
-                });
-                
-                sr.reveal('.gallery-item', { interval: 100 });
+                if (typeof ScrollReveal !== 'undefined') {
+                    const sr = ScrollReveal({
+                        origin: 'bottom',
+                        distance: '60px',
+                        duration: 1000,
+                        delay: 200,
+                        reset: false
+                    });
+                    
+                    sr.reveal('.gallery-item', { interval: 100 });
+                }
+            }
+
+            escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
             }
         }
 
@@ -1177,38 +1452,38 @@
         // Set current year in footer
         document.getElementById('footer-year').textContent = new Date().getFullYear();
 
-        // Initialize cursor and other animations from main.js
+        // Initialize cursor and other animations
         document.addEventListener('DOMContentLoaded', function() {
             // Custom cursor
             const cursor = document.querySelector('.cursor');
-            let mouseX = 0, mouseY = 0;
+            if (cursor) {
+                let mouseX = 0, mouseY = 0;
 
-            const cursorMove = () => {
-                if (cursor) {
+                const cursorMove = () => {
                     cursor.style.left = `${mouseX}px`;
                     cursor.style.top = `${mouseY}px`;
                     cursor.style.transform = 'translate(-50%, -50%)';
                     requestAnimationFrame(cursorMove);
-                }
-            };
+                };
 
-            document.addEventListener('mousemove', (e) => {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
-            });
-
-            cursorMove();
-
-            // Hide cursor on links and images
-            const interactiveElements = document.querySelectorAll('a, button, img');
-            interactiveElements.forEach(item => {
-                item.addEventListener('mouseover', () => {
-                    if (cursor) cursor.classList.add('hide-cursor');
+                document.addEventListener('mousemove', (e) => {
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
                 });
-                item.addEventListener('mouseleave', () => {
-                    if (cursor) cursor.classList.remove('hide-cursor');
+
+                cursorMove();
+
+                // Hide cursor on links and images
+                const interactiveElements = document.querySelectorAll('a, button, img');
+                interactiveElements.forEach(item => {
+                    item.addEventListener('mouseover', () => {
+                        cursor.classList.add('hide-cursor');
+                    });
+                    item.addEventListener('mouseleave', () => {
+                        cursor.classList.remove('hide-cursor');
+                    });
                 });
-            });
+            }
 
             // Active link highlighting
             const sections = document.querySelectorAll('section[id]');
