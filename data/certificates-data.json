@@ -1,49 +1,89 @@
 {
-  "lastUpdated": "2025-12-30",
+  "lastUpdated": "2025-01-15",
   "items": [
     {
       "id": 1,
-      "type": "certificate",
-      "title": "Web Development Bootcamp",
-      "description": "Completed full-stack web development course with HTML, CSS, JavaScript, and React.",
-      "image": "assets/img/certificates/web-dev.jpg",
-      "year": 2023,
-      "category": "certificate",
-      "issuedBy": "Udemy"
-    },
-    {
-      "id": 2,
-      "type": "certificate",
-      "title": "UI/UX Design Fundamentals",
-      "description": "Learned user interface and user experience design principles and prototyping.",
-      "image": "assets/img/certificates/ui-ux.jpg",
-      "year": 2023,
-      "category": "certificate",
-      "issuedBy": "Coursera"
-    },
-    {
-      "id": 3,
       "type": "project",
-      "title": "Online Tutor Booking System",
-      "description": "Java-based web platform for finding and booking home tutors.",
-      "image": "assets/img/projects/tutor-booking.jpg",
-      "year": 2023,
+      "title": "Home Tutor Search & Booking System",
+      "description": "A web-based academic group project developed to help students and parents search, compare, and book home tutors. The system includes tutor profiles, subject-based search, and booking management with a user-friendly interface.",
+      "image": "assets/img/projects/home-tutor.png",
+      "year": 2024,
       "category": "web",
-      "technologies": "Java, HTML, CSS, MySQL",
+      "technologies": "JAVA, JSP, CSS, JavaScript",
       "githubLink": "https://github.com/Ruchira20031209/SmartTutor",
       "liveLink": ""
     },
     {
-      "id": 1767065853264,
+      "id": 2,
       "type": "project",
-      "title": "Home Tutor Search & Booking System",
-      "description": "A web-based academic group project developed to help students and parents search, compare, and book home tutors. The system includes tutor profiles, subject-based search, and booking management with a user-friendly interface.",
+      "title": "Automatic Fire Detection & Extinguisher System",
+      "description": "An Arduino-based safety system designed to detect fire and smoke conditions and automatically trigger alarms and a water-based fire extinguishing mechanism. Focused on sensor integration and automation logic.",
+      "image": "assets/img/projects/fire-detection.png",
       "year": 2024,
+      "category": "iot",
+      "technologies": "Arduino, MQ-2 Gas Sensor, Flame Sensor, Relay Module",
+      "githubLink": "",
+      "liveLink": ""
+    },
+    {
+      "id": 3,
+      "type": "project",
+      "title": "Web-Based E-Shopping Store System",
+      "description": "A software engineering group project simulating a real-world e-commerce platform with multiple user roles including admin, customer, supplier, and delivery management. Focused on system structure and role-based access.",
+      "image": "assets/img/projects/e-shopping.png",
+      "year": 2025,
       "category": "web",
-      "technologies": "HTML, CSS, JavaScript, PHP",
-      "githubLink": "https://github.com/Ruchira20031209/SmartTutor",
-      "liveLink": "https://github.com/Ruchira20031209/SmartTutor",
-      "image": "assets/img/projects/home-tutor.jpg"
+      "technologies": "JAVA, JSP, CSS, JavaScript, SQL",
+      "githubLink": "https://github.com/Ruchira20031209/online-shopping-store",
+      "liveLink": ""
+    },
+    {
+      "id": 4,
+      "type": "project",
+      "title": "Personal Portfolio Website",
+      "description": "A fully hand-coded personal portfolio website developed to showcase projects, skills, and learning journey. The site is responsive across all devices and focused on clean UI and performance.",
+      "image": "assets/img/projects/portfolio.png",
+      "year": 2025,
+      "category": "web",
+      "technologies": "HTML, CSS, JavaScript, json",
+      "githubLink": "",
+      "liveLink": "https://ruchirawanigasinghe.online/"
+    },
+    {
+      "id": 5,
+      "type": "project",
+      "title": "Kumasha Grocery Website",
+      "description": "A small business front-end practice website developed to improve responsive design and layout structuring skills. Includes product sections and contact information.",
+      "image": "assets/img/projects/kumasha-grocery.png",
+      "year": 2024,
+      "category": "practice",
+      "technologies": "HTML, CSS, JavaScript",
+      "githubLink": "https://github.com/Ruchira20031209/Kumashaa",
+      "liveLink": "https://kumashaa.vercel.app/"
+    },
+    {
+      "id": 6,
+      "type": "project",
+      "title": "Kumasha Rooms Website",
+      "description": "A responsive room booking practice website created to practice layout design, content organization, and basic interactivity using JavaScript.",
+      "image": "assets/img/projects/kumasha-rooms.png",
+      "year": 2024,
+      "category": "practice",
+      "technologies": "HTML, CSS, JavaScript",
+      "githubLink": "https://github.com/Ruchira20031209/Kumasha-s-Rooms",
+      "liveLink": "https://kumasha-s-rooms.vercel.app/"
+    },
+    {
+      "id": 7,
+      "type": "project",
+      "title": "AK Traders Business Website",
+      "description": "A front-end practice project developed for a trading business concept, focusing on clean UI, responsiveness, and professional presentation.",
+      "image": "assets/img/projects/hardware.png",
+      "year": 2024,
+      "category": "practice",
+      "technologies": "HTML, CSS, JavaScript",
+      "githubLink": "https://github.com/Ruchira20031209/AK-Traders",
+      "liveLink": "https://ak-traders-azure.vercel.app/"
     }
   ]
 }
