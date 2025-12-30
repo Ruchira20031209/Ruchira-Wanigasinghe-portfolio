@@ -1,0 +1,37 @@
+{
+  "lastUpdated": "2025-01-15",
+  "items": [
+    {
+      "id": 1,
+      "type": "certificate",
+      "title": "Web Development Bootcamp",
+      "description": "Completed full-stack web development course with HTML, CSS, JavaScript, and React.",
+      "image": "assets/img/certificates/web-dev.jpg",
+      "year": 2023,
+      "category": "certificate",
+      "issuedBy": "Udemy"
+    },
+    {
+      "id": 2,
+      "type": "certificate",
+      "title": "UI/UX Design Fundamentals",
+      "description": "Learned user interface and user experience design principles and prototyping.",
+      "image": "assets/img/certificates/ui-ux.jpg",
+      "year": 2023,
+      "category": "certificate",
+      "issuedBy": "Coursera"
+    },
+    {
+      "id": 3,
+      "type": "project",
+      "title": "Online Tutor Booking System",
+      "description": "Java-based web platform for finding and booking home tutors.",
+      "image": "assets/img/projects/tutor-booking.jpg",
+      "year": 2023,
+      "category": "web",
+      "technologies": "Java, HTML, CSS, MySQL",
+      "githubLink": "https://github.com/Ruchira20031209/SmartTutor",
+      "liveLink": ""
+    }
+  ]
+}
