@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-01-15",
+  "lastUpdated": "2025-12-30",
   "items": [
     {
       "id": 1,
@@ -32,6 +32,18 @@
       "technologies": "Java, HTML, CSS, MySQL",
       "githubLink": "https://github.com/Ruchira20031209/SmartTutor",
       "liveLink": ""
+    },
+    {
+      "id": 1767065853264,
+      "type": "project",
+      "title": "Home Tutor Search & Booking System",
+      "description": "A web-based academic group project developed to help students and parents search, compare, and book home tutors. The system includes tutor profiles, subject-based search, and booking management with a user-friendly interface.",
+      "year": 2024,
+      "category": "web",
+      "technologies": "HTML, CSS, JavaScript, PHP",
+      "githubLink": "https://github.com/Ruchira20031209/SmartTutor",
+      "liveLink": "https://github.com/Ruchira20031209/SmartTutor",
+      "image": "assets/img/projects/home-tutor.jpg"
     }
   ]
 }
