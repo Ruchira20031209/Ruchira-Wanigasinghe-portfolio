@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-12-30T05:34:23.148Z",
+  "lastUpdated": "2025-12-30T05:35:03.269Z",
   "items": [
     {
       "id": 1,
@@ -84,6 +84,16 @@
       "technologies": "HTML, CSS, JavaScript",
       "githubLink": "https://github.com/Ruchira20031209/AK-Traders",
       "liveLink": "https://ak-traders-azure.vercel.app/"
+    },
+    {
+      "id": 1767072903269,
+      "type": "certificate",
+      "title": "Web Development Bootcamp",
+      "description": "test",
+      "year": 2025,
+      "category": "certificate",
+      "issuedBy": "Coursera",
+      "image": "assets/img/certificates/projects-1.png"
     }
   ]
 }
