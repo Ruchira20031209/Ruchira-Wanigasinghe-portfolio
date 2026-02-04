@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-04T14:55:11.741Z",
+  "lastUpdated": "2026-02-04T14:56:00.925Z",
   "items": [
     {
       "id": 1,
@@ -84,6 +84,16 @@
       "technologies": "HTML, CSS, JavaScript",
       "githubLink": "https://github.com/Ruchira20031209/AK-Traders",
       "liveLink": "https://ak-traders-azure.vercel.app/"
+    },
+    {
+      "id": 1770216960925,
+      "type": "certificate",
+      "title": "Web Design for Beginners",
+      "description": "Completed an online learning programme focused on the fundamentals of web design, including basic layout, design principles, and introductory web technologies.",
+      "year": 2026,
+      "category": "certificate",
+      "issuedBy": "Centre for Open & Distance Learning (CODL), University of Moratuwa, Sri Lanka (Department of Information Technology, Faculty of Information Technology)",
+      "image": "assets/img/certificates/webDev.png"
     }
   ]
 }
