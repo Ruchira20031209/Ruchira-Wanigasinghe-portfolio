@@ -1,0 +1,80 @@
+{
+  "lastUpdated": "2026-06-05T12:50:00.000Z",
+  "items": [
+    {
+      "id": 1,
+      "slug": "how-i-document-a-security-lab",
+      "title": "How I Document a Security Lab as a Student",
+      "description": "One of the easiest ways to make a cybersecurity portfolio stronger is to document every useful lab properly. A short write-up can show what the target was, what tools were used, what I observed, and what I learned from the process.\n\nI try to keep my lab notes simple and professional. I describe the purpose, the method, and the result without trying to sound dramatic. That makes the work easier for recruiters and mentors to trust.\n\nGood lab documentation also helps me improve faster. When I return to the same topic later, I can see where I made mistakes, what I understood correctly, and which areas I still need to study deeper.",
+      "image": "assets/img/projects/portfolio.png",
+      "publishDate": "2026-05-28",
+      "language": "English",
+      "links": [
+        {
+          "label": "Open Project Archive",
+          "url": "https://ruchirawanigasinghe.online/certificates.html"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "beginner-notes-from-wireshark-analysis",
+      "title": "Beginner Notes from Wireshark Traffic Analysis",
+      "description": "When I first started using Wireshark, the biggest challenge was not clicking the tool. The biggest challenge was learning how to stay calm and understand what I was actually looking at.\n\nI learned to focus on small steps first: identify the protocol, follow a stream, inspect timing, and compare normal-looking behavior against suspicious patterns. That made packet analysis feel less overwhelming.\n\nEven at a beginner level, Wireshark teaches an important cybersecurity habit: look carefully before making conclusions. That habit matters across networking, incident response, and many other security tasks.",
+      "image": "assets/img/projects/fire-detection.png",
+      "publishDate": "2026-05-18",
+      "language": "English",
+      "links": [
+        {
+          "label": "View Featured Projects",
+          "url": "https://ruchirawanigasinghe.online/#projects"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "sinhala-web-security-beginners-notes",
+      "title": "සිංහලෙන් Web Security ගැන මූලික සටහන්",
+      "description": "Web security කියන්නේ tools use කරන එක විතරක් නෙවෙයි. application එකක් build කරනකොට input, authentication, access control, session handling වගේ areas safe විදියට හිතන habit එක develop කරන එකත් ඒකට අයිති වෙනවා.\n\nStudent projects වලදී ගොඩක් වෙලාවට function එක වැඩ කරනවාද කියන එකටම වැඩි focus එක යනවා. හැබැයි security view එකෙන් බලනකොට ඒ project එකකට unauthorized access, weak validation, හෝ exposed information තියෙනවද කියන එකත් equally important.\n\nමේ වගේ notes ලියන එක මට concepts clear කරගන්නත්, ඉගෙන ගන්න දේවල් future එකේ revisit කරන්නත් help වෙනවා.",
+      "image": "assets/img/projects/e-shopping.png",
+      "publishDate": "2026-05-05",
+      "language": "Sinhala",
+      "links": [
+        {
+          "label": "Portfolio Home",
+          "url": "https://ruchirawanigasinghe.online/"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "why-secure-development-matters-in-student-projects",
+      "title": "Why Secure Development Matters Even in Student Projects",
+      "description": "Student projects are often treated as practice only, but they are still the best place to build strong habits. If I learn to think about validation, structure, and exposure early, it becomes easier to carry that mindset into real work later.\n\nSecure development does not always start with advanced tools. Often it starts with better decisions: not exposing sensitive values, keeping roles clear, validating inputs, and thinking about what should happen when something goes wrong.\n\nThat is why I want my portfolio to show both cybersecurity interest and development responsibility. The combination matters.",
+      "image": "assets/img/projects/home-tutor.png",
+      "publishDate": "2026-04-23",
+      "language": "English",
+      "links": [
+        {
+          "label": "Cyber Resume",
+          "url": "https://ruchirawanigasinghe.online/assets/pdf/Ruchira-Cv.pdf"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "small-vulnerability-assessment-mindset",
+      "title": "What I Look for During a Small Vulnerability Assessment",
+      "description": "When I practice basic vulnerability review, I start by asking simple questions. What is exposed? Which services are running? What seems normal, and what deserves a second look?\n\nThis mindset helps me stay structured instead of randomly scanning and collecting outputs I do not understand yet. Enumeration becomes more useful when it is connected to observation and reasoning.\n\nFor a student portfolio, even a small assessment write-up can be valuable if it clearly explains the target context, the tool output, and the learning gained from it.",
+      "image": "assets/img/projects/hardware.png",
+      "publishDate": "2026-04-08",
+      "language": "English",
+      "links": [
+        {
+          "label": "Read More Articles",
+          "url": "https://ruchirawanigasinghe.online/articles.html"
+        }
+      ]
+    }
+  ]
+}
