@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-04T14:56:00.925Z",
+  "lastUpdated": "2026-06-05T16:15:00.000Z",
   "items": [
     {
       "id": 1,
@@ -45,7 +45,7 @@
       "image": "assets/img/projects/portfolio.png",
       "year": 2025,
       "category": "web",
-      "technologies": "HTML, CSS, JavaScript, json",
+      "technologies": "HTML, CSS, JavaScript, JSON",
       "githubLink": "",
       "liveLink": "https://ruchirawanigasinghe.online/"
     },
@@ -93,7 +93,7 @@
       "year": 2026,
       "category": "certificate",
       "issuedBy": "CODL, University of Moratuwa",
-      "image": "assets/img/certificates/webDev.png"
+      "image": "assets/img/webDev.png"
     }
   ]
 }
