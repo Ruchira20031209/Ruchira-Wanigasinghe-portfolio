@@ -25,9 +25,16 @@
     const currentPath = window.location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll("[data-nav-page]").forEach((link) => {
       const target = link.getAttribute("data-nav-page");
-      const isArticleDetail = currentPath === "article.html" && target === "articles.html";
-      link.classList.toggle("is-active", target === currentPath || isArticleDetail);
+      const isArchiveDetail = currentPath === "archive-item.html" && target === "certificates.html";
+      link.classList.toggle("is-active", target === currentPath || isArchiveDetail);
     });
+  }
+
+  function finishPageLoad() {
+    if (!document.body) return;
+    document.body.classList.remove("is-loading");
+    document.body.classList.add("is-ready");
+    setHeaderOffset();
   }
 
   function setupNavigation() {
@@ -88,5 +95,5 @@
   });
 
   window.addEventListener("resize", setHeaderOffset);
-  window.addEventListener("load", setHeaderOffset);
+  window.addEventListener("load", finishPageLoad);
 })();
