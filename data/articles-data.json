@@ -1,104 +1,80 @@
 {
-  "lastUpdated": "2026-06-08T07:32:42.599Z",
+  "lastUpdated": "2026-06-05T12:50:00.000Z",
   "items": [
     {
       "id": 1,
-      "slug": "live-cyber-threat-maps",
-      "title": "Live Cyber Threat Maps බලමු",
-      "description": "ලෝකය පුරා සිදුවන cyber threats ගැන real-time view එකක් ගන්න live cyber threat maps ගොඩක් useful වෙනවා. Hacking attempts, phishing activity, malware traffic වගේ දේවල් visual map එකක් ලෙස බලන්න Check Point සහ Kaspersky cyber maps භාවිතා කරන්න පුළුවන්. මේවා cybersecurity awareness සහ learning purposes සඳහා හොඳ resources වේ.",
-      "image": "assets/images/articles/live-cyber-threat-maps.png",
-      "publishDate": "2026-06-08",
-      "language": "Sinhala",
+      "slug": "how-i-document-a-security-lab",
+      "title": "How I Document a Security Lab as a Student",
+      "description": "One of the easiest ways to make a cybersecurity portfolio stronger is to document every useful lab properly. A short write-up can show what the target was, what tools were used, what I observed, and what I learned from the process.\n\nI try to keep my lab notes simple and professional. I describe the purpose, the method, and the result without trying to sound dramatic. That makes the work easier for recruiters and mentors to trust.\n\nGood lab documentation also helps me improve faster. When I return to the same topic later, I can see where I made mistakes, what I understood correctly, and which areas I still need to study deeper.",
+      "image": "assets/img/projects/portfolio.png",
+      "publishDate": "2026-05-28",
+      "language": "English",
       "links": [
         {
-          "label": "Check Point Live Cyber Threat Map",
-          "url": "https://threatmap.checkpoint.com/"
-        },
-        {
-          "label": "Kaspersky Cyberthreat Real-Time Map",
-          "url": "https://cybermap.kaspersky.com/"
+          "label": "Open Project Archive",
+          "url": "https://ruchirawanigasinghe.online/certificates.html"
         }
-      ],
-      "updatedAt": "2026-06-08T07:30:00.000Z"
+      ]
     },
     {
       "id": 2,
-      "slug": "user-recon-username-social-search",
-      "title": "User Recon: Username Social Media Search",
-      "description": "User Recon කියන්නේ username එකක් විවිධ social networks තුළ තිබේද කියලා සොයන්න භාවිතා කරන OSINT approach එකක්. Investigation හෝ learning environment එකකදී එකම username එක platforms කිහිපයක භාවිතා වෙනවද කියලා හඳුනාගන්න මෙය වැදගත්. මෙවැනි tools භාවිතා කරන විට privacy, permission, සහ ethical boundaries ගැන සැලකිලිමත් වීම අත්‍යවශ්‍යයි.",
-      "image": "assets/images/articles/user-recon-username-social-search.png",
-      "publishDate": "2026-06-08",
-      "language": "Sinhala",
+      "slug": "beginner-notes-from-wireshark-analysis",
+      "title": "Beginner Notes from Wireshark Traffic Analysis",
+      "description": "When I first started using Wireshark, the biggest challenge was not clicking the tool. The biggest challenge was learning how to stay calm and understand what I was actually looking at.\n\nI learned to focus on small steps first: identify the protocol, follow a stream, inspect timing, and compare normal-looking behavior against suspicious patterns. That made packet analysis feel less overwhelming.\n\nEven at a beginner level, Wireshark teaches an important cybersecurity habit: look carefully before making conclusions. That habit matters across networking, incident response, and many other security tasks.",
+      "image": "assets/img/projects/fire-detection.png",
+      "publishDate": "2026-05-18",
+      "language": "English",
       "links": [
         {
-          "label": "UserRecon GitHub Repository",
-          "url": "https://github.com/issamelferkh/userrecon"
+          "label": "View Featured Projects",
+          "url": "https://ruchirawanigasinghe.online/#projects"
         }
-      ],
-      "updatedAt": "2026-06-08T07:30:00.000Z"
+      ]
     },
     {
       "id": 3,
-      "slug": "grim-tool-information-gathering",
-      "title": "Information Gathering with GRIM Tool",
-      "description": "Information Gathering කියන්නේ cybersecurity learning සහ penetration testing methodology එකේ මුල්ම වැදගත් අදියරක්. Target environment එක ගැන public and authorized information එක රැස් කිරීමෙන් vulnerabilities හඳුනාගන්න අවශ්‍ය background එක සකස් කරගන්න පුළුවන්. GRIM වැනි recon tools subdomain discovery, IP lookup, සහ තවත් reconnaissance checks සඳහා learning labs තුළ භාවිතා කළ හැකිය.",
-      "image": "assets/images/articles/grim-tool-information-gathering.png",
-      "publishDate": "2026-06-08",
+      "slug": "sinhala-web-security-beginners-notes",
+      "title": "සිංහලෙන් Web Security ගැන මූලික සටහන්",
+      "description": "Web security කියන්නේ tools use කරන එක විතරක් නෙවෙයි. application එකක් build කරනකොට input, authentication, access control, session handling වගේ areas safe විදියට හිතන habit එක develop කරන එකත් ඒකට අයිති වෙනවා.\n\nStudent projects වලදී ගොඩක් වෙලාවට function එක වැඩ කරනවාද කියන එකටම වැඩි focus එක යනවා. හැබැයි security view එකෙන් බලනකොට ඒ project එකකට unauthorized access, weak validation, හෝ exposed information තියෙනවද කියන එකත් equally important.\n\nමේ වගේ notes ලියන එක මට concepts clear කරගන්නත්, ඉගෙන ගන්න දේවල් future එකේ revisit කරන්නත් help වෙනවා.",
+      "image": "assets/img/projects/e-shopping.png",
+      "publishDate": "2026-05-05",
       "language": "Sinhala",
       "links": [
         {
-          "label": "GRIM Tool GitHub Repository",
-          "url": "https://github.com/nandydark/grim"
+          "label": "Portfolio Home",
+          "url": "https://ruchirawanigasinghe.online/"
         }
-      ],
-      "updatedAt": "2026-06-08T07:30:00.000Z"
+      ]
     },
     {
       "id": 4,
-      "slug": "find-website-ip-address-termux",
-      "title": "How to Find a Website IP Address in Termux",
-      "description": "Termux තුළ ping command එක භාවිතා කර website එකකට resolve වන IP address එක බලන්න පුළුවන්. උදාහරණයක් ලෙස ping google.com කියලා type කළාම domain එකට අදාළ IP address එක සහ response details පෙන්වයි. Learning purpose එකට -c වැනි option එකක් භාවිතා කර packet count එක limit කරගැනීම හොඳ practice එකක්. Network testing කරන විට තමන්ට අයිතිය ඇති systems හෝ public safe examples පමණක් භාවිතා කරන්න.",
-      "image": "assets/images/articles/find-website-ip-address-termux.png",
-      "publishDate": "2026-06-08",
+      "slug": "why-secure-development-matters-in-student-projects",
+      "title": "Why Secure Development Matters Even in Student Projects",
+      "description": "Student projects are often treated as practice only, but they are still the best place to build strong habits. If I learn to think about validation, structure, and exposure early, it becomes easier to carry that mindset into real work later.\n\nSecure development does not always start with advanced tools. Often it starts with better decisions: not exposing sensitive values, keeping roles clear, validating inputs, and thinking about what should happen when something goes wrong.\n\nThat is why I want my portfolio to show both cybersecurity interest and development responsibility. The combination matters.",
+      "image": "assets/img/projects/home-tutor.png",
+      "publishDate": "2026-04-23",
       "language": "English",
       "links": [
         {
-          "label": "Termux Official Site",
-          "url": "https://termux.dev/"
+          "label": "Cyber Resume",
+          "url": "https://ruchirawanigasinghe.online/assets/pdf/Ruchira-Cv.pdf"
         }
-      ],
-      "updatedAt": "2026-06-08T07:30:00.000Z"
+      ]
     },
     {
       "id": 5,
-      "slug": "metasploit-framework-overview",
-      "title": "Metasploit Framework: Ethical Security Overview",
-      "description": "Metasploit Framework කියන්නේ penetration testing සහ security lab learning සඳහා ලෝකය පුරා භාවිතා වන powerful framework එකක්. එය exploit research, vulnerability validation, සහ defensive security training සඳහා authorized lab environments තුළ භාවිතා කළ හැකිය. මෙවැනි tools භාවිතා කළ යුත්තේ permission ඇති systems, CTF labs, හෝ personal test environments තුළ පමණි.",
-      "image": "assets/images/articles/metasploit-framework-overview.png",
-      "publishDate": "2026-06-08",
-      "language": "Sinhala",
+      "slug": "small-vulnerability-assessment-mindset",
+      "title": "What I Look for During a Small Vulnerability Assessment",
+      "description": "When I practice basic vulnerability review, I start by asking simple questions. What is exposed? Which services are running? What seems normal, and what deserves a second look?\n\nThis mindset helps me stay structured instead of randomly scanning and collecting outputs I do not understand yet. Enumeration becomes more useful when it is connected to observation and reasoning.\n\nFor a student portfolio, even a small assessment write-up can be valuable if it clearly explains the target context, the tool output, and the learning gained from it.",
+      "image": "assets/img/projects/hardware.png",
+      "publishDate": "2026-04-08",
+      "language": "English",
       "links": [
         {
-          "label": "Metasploit Documentation",
-          "url": "https://docs.metasploit.com/"
-        },
-        {
-          "label": "Rapid7 Metasploit",
-          "url": "https://www.rapid7.com/products/metasploit/"
+          "label": "Read More Articles",
+          "url": "https://ruchirawanigasinghe.online/articles.html"
         }
-      ],
-      "updatedAt": "2026-06-08T07:30:00.000Z"
-    },
-    {
-      "id": 6,
-      "slug": "what-are-bin-numbers",
-      "title": "What Are BIN Numbers? Card Security Basics",
-      "description": "BIN හෝ Bank Identification Number කියන්නේ payment card එකක මුල් digits කිහිපය මගින් card network, issuing bank, සහ card category වැනි තොරතුරු හඳුනාගන්න භාවිතා වන numbering concept එකක්. Cybersecurity සහ fraud awareness පැත්තෙන් BIN concepts තේරුම් ගැනීම payment security, fraud detection, සහ online transaction safety ගැන ඉගෙනගන්න උපකාරී වේ. Illegal carding, fake card usage, හෝ unauthorized premium trial abuse වැනි දේවල් නොකළ යුතු අතර ඒවා නීති විරෝධී සහ unethical වේ.",
-      "image": "assets/images/articles/what-are-bin-numbers.png",
-      "publishDate": "2026-06-08",
-      "language": "English",
-      "links": [],
-      "updatedAt": "2026-06-08T07:30:00.000Z"
+      ]
     }
   ]
 }
