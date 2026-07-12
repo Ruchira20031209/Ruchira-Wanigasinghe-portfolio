@@ -169,15 +169,13 @@ function initScrollReveal() {
   });
 
   sr.reveal(
-    ".home__image, .projects__container, .work__container, .testimonials__container, .contact__container, .articles__swiper"
+    ".home__image, .projects__container, .work__container, .testimonials__container, .contact__container"
   );
   sr.reveal(".home__data", { delay: 900, origin: "bottom" });
   sr.reveal(".home__info", { delay: 1200, origin: "bottom" });
   sr.reveal(".home__social, .home__cv", { delay: 1500 });
   sr.reveal(".about__data", { origin: "left" });
   sr.reveal(".about__image", { origin: "right" });
-  sr.reveal(".articles__summary", { origin: "left" });
-  sr.reveal(".articles__controls", { origin: "right", delay: 450 });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
