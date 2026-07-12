@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Archive item detail view for the portfolio of Ruchira Wanigasinghe.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#020208">
+  <meta name="color-scheme" content="dark light">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; img-src 'self' data: blob: https:; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://fonts.cdnfonts.com; font-src 'self' data: https://cdnjs.cloudflare.com https://fonts.gstatic.com https://fonts.cdnfonts.com; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self' https://raw.githubusercontent.com https://api.github.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+  >
+  <link rel="canonical" href="https://ruchirawanigasinghe.online/archive-item.html">
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+  <link href="https://fonts.cdnfonts.com/css/ica-rubrik-black" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260712-2">
+
+  <style>
+    html { background: #020208; }
+    :root[data-theme="light"] html { background: #f4f6ff; }
+    body {
+      margin: 0;
+      font-family: "Montserrat", sans-serif;
+    }
+    .site-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+      background: radial-gradient(circle at top, rgba(188, 140, 255, 0.2), transparent 48%), #020208;
+    }
+    :root[data-theme="light"] .site-loader {
+      background: radial-gradient(circle at top, rgba(188, 140, 255, 0.16), transparent 48%), #f4f6ff;
+    }
+    .site-loader__content { text-align: center; }
+    .site-loader__ring {
+      width: 3.25rem;
+      height: 3.25rem;
+      margin: 0 auto 1rem;
+      border: 3px solid rgba(188, 140, 255, 0.18);
+      border-top-color: #bc8cff;
+      border-radius: 50%;
+      animation: site-loader-spin 1s linear infinite;
+    }
+    :root[data-theme="light"] .site-loader__ring {
+      border-color: rgba(80, 96, 150, 0.16);
+      border-top-color: #bc8cff;
+    }
+    .site-loader__title {
+      margin: 0 0 .35rem;
+      font-family: "Unbounded", sans-serif;
+      font-size: 1.1rem;
+      color: #edf0f7;
+    }
+    :root[data-theme="light"] .site-loader__title { color: #1a1d29; }
+    .site-loader__text {
+      margin: 0;
+      color: rgba(237, 240, 247, 0.78);
+      font-size: .9rem;
+    }
+    :root[data-theme="light"] .site-loader__text { color: rgba(26, 29, 41, 0.7); }
+    @keyframes site-loader-spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .archive-detail {
+      padding-block: 4rem 2rem;
+    }
+
+    .archive-detail__shell {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .archive-detail__crumb {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      color: var(--first-color-light);
+      font-size: var(--small-font-size);
+    }
+
+    .archive-detail__card {
+      display: grid;
+      gap: 1.5rem;
+      padding: 1.2rem;
+      border: 1px solid var(--surface-border);
+      border-radius: var(--card-radius-lg);
+      background: linear-gradient(180deg, hsla(240, 8%, 8%, 0.96), hsla(240, 8%, 6%, 1));
+      box-shadow: var(--card-shadow);
+      overflow: clip;
+      isolation: isolate;
+    }
+    :root[data-theme="light"] .archive-detail__card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(243, 246, 255, 1));
+    }
+
+    .archive-detail__media {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .archive-detail__hero {
+      overflow: clip;
+      border-radius: calc(var(--card-radius-lg) - .4rem);
+      background: rgba(255, 255, 255, 0.04);
+    }
+    :root[data-theme="light"] .archive-detail__hero {
+      background: rgba(26, 29, 41, 0.04);
+    }
+
+    .archive-detail__image {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+    }
+
+    .archive-detail__thumbs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+      gap: .75rem;
+    }
+
+    .archive-detail__thumb {
+      border: 1px solid transparent;
+      border-radius: 1rem;
+      padding: .2rem;
+      background: rgba(255, 255, 255, 0.04);
+      cursor: pointer;
+      transition: border-color .2s ease, transform .2s ease;
+    }
+    :root[data-theme="light"] .archive-detail__thumb {
+      background: rgba(26, 29, 41, 0.04);
+    }
+
+    .archive-detail__thumb.is-active,
+    .archive-detail__thumb:hover {
+      border-color: var(--first-color);
+      transform: translateY(-2px);
+    }
+
+    .archive-detail__thumb img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: .8rem;
+      display: block;
+    }
+
+    .archive-detail__content {
+      display: grid;
+      gap: 1rem;
+      align-content: start;
+    }
+
+    .archive-detail__pills,
+    .archive-detail__stats,
+    .archive-detail__links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+    }
+
+    .archive-detail__pill,
+    .archive-detail__stat {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .55rem .9rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--surface-border);
+      color: var(--text-color);
+      font-size: var(--small-font-size);
+    }
+    :root[data-theme="light"] .archive-detail__pill,
+    :root[data-theme="light"] .archive-detail__stat,
+    :root[data-theme="light"] .archive-detail__link {
+      background: rgba(26, 29, 41, 0.04);
+    }
+    :root[data-theme="light"] .archive-detail__link--primary {
+      background: var(--first-color);
+      color: var(--body-color);
+    }
+
+    .archive-detail__title {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      line-height: 1.08;
+    }
+
+    .archive-detail__description {
+      color: var(--text-color);
+      line-height: 1.85;
+      white-space: pre-line;
+    }
+
+    .archive-detail__section {
+      display: grid;
+      gap: .5rem;
+    }
+
+    .archive-detail__section-title {
+      margin: 0;
+      font-size: var(--h3-font-size);
+    }
+
+    .archive-detail__link {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .85rem 1.15rem;
+      border-radius: 999px;
+      border: 1px solid var(--surface-border);
+      color: var(--title-color);
+      background: rgba(255, 255, 255, 0.04);
+      font-family: var(--second-font);
+      font-size: var(--small-font-size);
+    }
+
+    .archive-detail__link--primary {
+      background: var(--first-color);
+      border-color: var(--first-color);
+      color: var(--body-color);
+    }
+
+    .archive-detail__empty {
+      padding: 2rem;
+      border: 1px dashed var(--surface-border);
+      border-radius: var(--card-radius-lg);
+      text-align: center;
+    }
+
+    @media (min-width: 960px) {
+      .archive-detail__card {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .archive-detail__thumbs,
+      .archive-detail__pills,
+      .archive-detail__stats,
+      .archive-detail__links {
+        gap: .6rem;
+      }
+    }
+  </style>
+  <noscript>
+    <style>
+      .site-loader { display: none !important; }
+      body { overflow: auto !important; }
+    </style>
+  </noscript>
+
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem("portfolio-theme") || "dark";
+  </script>
+
+  <title>Archive Details | Ruchira Wanigasinghe</title>
+</head>
+<body class="is-loading">
+  <div class="site-loader" aria-hidden="true">
+    <div class="site-loader__content">
+      <div class="site-loader__ring"></div>
+      <p class="site-loader__title">Loading details</p>
+      <p class="site-loader__text">Opening the full archive item view...</p>
+    </div>
+  </div>
+
+  <header class="header" id="header">
+    <div class="blob-animate"></div>
+
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">Ruchira</a>
+
+      <button
+        class="nav__toggle"
+        type="button"
+        data-nav-toggle
+        aria-expanded="false"
+        aria-controls="site-nav-menu"
+        aria-label="Open navigation"
+      >
+        <i class="ri-menu-3-line"></i>
+      </button>
+
+      <div class="nav__menu" id="site-nav-menu" data-nav-menu>
+        <button class="nav__close" type="button" data-nav-close aria-label="Close navigation">
+          <i class="ri-close-line"></i>
+        </button>
+
+        <ul class="nav__list">
+          <li><a href="index.html#about" class="nav__link">About</a></li>
+          <li><a href="index.html#projects" class="nav__link">Projects</a></li>
+          <li><a href="index.html#journey" class="nav__link">Journey</a></li>
+          <li><a href="certificates.html" class="nav__link" data-nav-page="certificates.html">Archive</a></li>
+          <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+        </ul>
+
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark and light mode">
+          <span class="theme-toggle__icon"><i data-theme-icon class="ri-moon-clear-line"></i></span>
+          <span data-theme-label>Dark</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main subpage-main">
+    <div class="cursor"></div>
+
+    <section class="archive-detail section">
+      <div class="container" id="archive-detail-root"></div>
+    </section>
+  </main>
+
+  <footer class="footer grid">
+    <div class="blob-animate"></div>
+
+    <div class="footer__copy">
+      All Rights Reserved By <span>Ruchira Wanigasinghe</span>
+    </div>
+
+    <div class="footer__year">
+      &#169; <span id="footer-year">2026</span>
+    </div>
+  </footer>
+
+  <script src="data/portfolio-local-data.js?v=20260712-1"></script>
+  <script src="assets/js/site-ui.js?v=20260712-1"></script>
+  <script src="assets/js/archive-detail.js?v=20260712-1"></script>
+</body>
+</html>
