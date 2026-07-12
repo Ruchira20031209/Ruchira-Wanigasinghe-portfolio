@@ -93,11 +93,8 @@ function projectSlideMarkup(project, index) {
     .filter(Boolean)
     .map((value) => escapeHtml(String(value)));
 
-  const actionUrl = sanitizeUrl(project.liveLink) || sanitizeUrl(project.githubLink) || "certificates.html";
-  const imageUrl = sanitizeImageUrl(project.image) || "assets/img/projects/portfolio.png";
-  const icon = sanitizeUrl(project.liveLink) ? "ri-eye-line" : "ri-code-s-slash-line";
-  const isExternal = /^https?:\/\//i.test(actionUrl);
-  const targetAttrs = isExternal ? ' target="_blank" rel="noopener noreferrer"' : "";
+  const actionUrl = getArchiveDetailUrl(project);
+  const imageUrl = sanitizeImageUrl(getPrimaryImage(project)) || "assets/img/projects/portfolio.png";
 
   return `
     <article class="projects__card swiper-slide">
@@ -111,7 +108,6 @@ function projectSlideMarkup(project, index) {
       <div class="projects__data">
         <h1 class="projects__title">${escapeHtml(project.title)}</h1>
         <p class="projects__subtitle">${subtitleParts.join(" . ")}</p>
-        <p class="projects__description">${escapeHtml(getExcerpt(project.description, 150))}</p>
       </div>
 
       <div class="projects__image">
@@ -122,8 +118,8 @@ function projectSlideMarkup(project, index) {
           loading="lazy"
           onerror="this.src='assets/img/projects/portfolio.png'"
         >
-        <a href="${escapeHtml(actionUrl)}"${targetAttrs} class="projects__button">
-          <i class="${icon}"></i>
+        <a href="${escapeHtml(actionUrl)}" class="projects__button" aria-label="View project details">
+          <i class="ri-arrow-right-line"></i>
         </a>
       </div>
     </article>
@@ -147,6 +143,17 @@ function getExcerpt(text, limit) {
   const value = (text || "").replace(/\s+/g, " ").trim();
   if (value.length <= limit) return value;
   return `${value.slice(0, limit).trimEnd()}...`;
+}
+
+function getPrimaryImage(item) {
+  const images = Array.isArray(item && item.images) ? item.images : [];
+  const primary = images.find(Boolean);
+  return primary || item.image || "";
+}
+
+function getArchiveDetailUrl(item) {
+  const id = item && item.id != null ? String(item.id).trim() : "";
+  return id ? `archive-item.html?id=${encodeURIComponent(id)}` : "certificates.html";
 }
 
 function sanitizeUrl(url) {
@@ -196,9 +203,6 @@ function emptySlide() {
       <div class="projects__data">
         <h1 class="projects__title">Projects will appear here</h1>
         <p class="projects__subtitle">Add items in the archive admin</p>
-        <p class="projects__description">
-          Your latest project cards load from the same data file used by the projects and certificates page.
-        </p>
       </div>
 
       <div class="projects__image">
