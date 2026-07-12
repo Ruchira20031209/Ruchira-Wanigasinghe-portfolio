@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta
     name="description"
-    content="Ruchira Wanigasinghe - Cyber Security undergraduate at SLIIT. Portfolio featuring projects, certificates, articles, experience, and creative technical work."
+    content="Ruchira Wanigasinghe - Cyber Security undergraduate at SLIIT. Portfolio featuring projects, certificates, experience, and creative technical work."
   >
   <meta
     name="keywords"
-    content="Ruchira Wanigasinghe, cyber security, cybersecurity student, SLIIT, portfolio, projects, certificates, articles"
+    content="Ruchira Wanigasinghe, cyber security, cybersecurity student, SLIIT, portfolio, projects, certificates"
   >
   <meta name="author" content="Ruchira Wanigasinghe">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
@@ -26,7 +26,7 @@
   <meta property="og:title" content="Ruchira Wanigasinghe | Portfolio">
   <meta
     property="og:description"
-    content="Cyber Security undergraduate at SLIIT with a portfolio of projects, certificates, articles, and creative technical work."
+    content="Cyber Security undergraduate at SLIIT with a portfolio of projects, certificates, and creative technical work."
   >
   <meta property="og:image" content="https://ruchirawanigasinghe.online/assets/img/home-perfil.png">
 
@@ -35,7 +35,7 @@
   <meta property="twitter:title" content="Ruchira Wanigasinghe | Portfolio">
   <meta
     property="twitter:description"
-    content="Cyber Security undergraduate at SLIIT with a portfolio of projects, certificates, articles, and creative technical work."
+    content="Cyber Security undergraduate at SLIIT with a portfolio of projects, certificates, and creative technical work."
   >
   <meta property="twitter:image" content="https://ruchirawanigasinghe.online/assets/img/home-perfil.png">
 
@@ -69,18 +69,77 @@
 
   <link rel="canonical" href="https://ruchirawanigasinghe.online/">
   <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
-  <link rel="preload" href="assets/css/styles.css?v=20260606-2" as="style">
-  <link rel="preload" href="assets/css/articles.css?v=20260606-2" as="style">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="assets/css/styles.css?v=20260712-2" as="style">
   <link rel="preload" href="assets/img/home-perfil.png" as="image" type="image/png">
-  <link rel="preload" href="assets/js/main.js?v=20260606-2" as="script">
+  <link rel="preload" href="assets/js/main.js?v=20260712-1" as="script">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
   <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
   <link href="https://fonts.cdnfonts.com/css/ica-rubrik-black" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260606-2">
-  <link rel="stylesheet" href="assets/css/articles.css?v=20260606-2">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260712-2">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+  <style>
+    html { background: #020208; }
+    :root[data-theme="light"] html { background: #f4f6ff; }
+    body {
+      margin: 0;
+      font-family: "Montserrat", sans-serif;
+    }
+    .site-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+      background: radial-gradient(circle at top, rgba(188, 140, 255, 0.2), transparent 48%), #020208;
+    }
+    :root[data-theme="light"] .site-loader {
+      background: radial-gradient(circle at top, rgba(188, 140, 255, 0.16), transparent 48%), #f4f6ff;
+    }
+    .site-loader__content { text-align: center; }
+    .site-loader__ring {
+      width: 3.25rem;
+      height: 3.25rem;
+      margin: 0 auto 1rem;
+      border: 3px solid rgba(188, 140, 255, 0.18);
+      border-top-color: #bc8cff;
+      border-radius: 50%;
+      animation: site-loader-spin 1s linear infinite;
+    }
+    :root[data-theme="light"] .site-loader__ring {
+      border-color: rgba(80, 96, 150, 0.16);
+      border-top-color: #bc8cff;
+    }
+    .site-loader__title {
+      margin: 0 0 .35rem;
+      font-family: "Unbounded", sans-serif;
+      font-size: 1.1rem;
+      color: #edf0f7;
+    }
+    :root[data-theme="light"] .site-loader__title { color: #1a1d29; }
+    .site-loader__text {
+      margin: 0;
+      color: rgba(237, 240, 247, 0.78);
+      font-size: .9rem;
+    }
+    :root[data-theme="light"] .site-loader__text { color: rgba(26, 29, 41, 0.7); }
+    @keyframes site-loader-spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+  <noscript>
+    <style>
+      .site-loader { display: none !important; }
+      body { overflow: auto !important; }
+    </style>
+  </noscript>
 
   <script>
     document.documentElement.dataset.theme = localStorage.getItem("portfolio-theme") || "dark";
@@ -88,7 +147,14 @@
 
   <title>Ruchira Wanigasinghe | Portfolio</title>
 </head>
-<body>
+<body class="is-loading">
+  <div class="site-loader" aria-hidden="true">
+    <div class="site-loader__content">
+      <div class="site-loader__ring"></div>
+      <p class="site-loader__title">Ruchira Portfolio</p>
+      <p class="site-loader__text">Loading the latest work...</p>
+    </div>
+  </div>
   <header class="header" id="header">
     <div class="blob-animate"></div>
 
@@ -115,7 +181,6 @@
           <li><a href="#about" class="nav__link">About</a></li>
           <li><a href="#projects" class="nav__link">Projects</a></li>
           <li><a href="#journey" class="nav__link">Journey</a></li>
-          <li><a href="#articles" class="nav__link">Articles</a></li>
           <li><a href="certificates.html" class="nav__link" data-nav-page="certificates.html">Archive</a></li>
           <li><a href="#contact" class="nav__link">Contact</a></li>
         </ul>
@@ -188,7 +253,7 @@
           <p class="about__description">
             I'm a <b>Cyber Security undergraduate at SLIIT</b> who enjoys building
             practical digital work across <b>security, web experiences, and design.</b>
-            My portfolio brings together the projects, certifications, articles, and
+            My portfolio brings together the projects, certifications, and
             experiments that are helping me grow for the long term.
           </p>
 
@@ -225,9 +290,6 @@
               <div class="projects__data">
                 <h1 class="projects__title">Latest projects will appear here</h1>
                 <p class="projects__subtitle">Loaded from your archive data</p>
-                <p class="projects__description">
-                  Your newest project cards are shown on the homepage automatically.
-                </p>
               </div>
 
               <div class="projects__image">
@@ -315,7 +377,7 @@
 
               <p class="work__description">
                 Exploring cyber security through lab work, networking basics, Linux
-                practice, web security topics, and article-based learning notes.
+                practice, web security topics, and hands-on learning notes.
               </p>
             </div>
           </div>
@@ -377,7 +439,7 @@
       <style>
         .testimonials-banner {
           width: 100%;
-          height: 100vh;
+          height: clamp(34rem, 82vh, 52rem);
           text-align: center;
           overflow: hidden;
           position: relative;
@@ -402,14 +464,14 @@
 
         .testimonials-banner::before {
           position: absolute;
-          width: min(1400px, 100vw);
-          top: 10%;
+          width: min(1180px, 92vw);
+          top: 13%;
           left: 50%;
-          height: 90%;
+          height: 82%;
           transform: translateX(-50%);
           content: "";
           background-image: url(assets/img/bg.png);
-          background-size: 100%;
+          background-size: contain;
           background-repeat: no-repeat;
           background-position: top center;
           pointer-events: none;
@@ -417,10 +479,10 @@
 
         .testimonials-slider {
           position: absolute;
-          width: 200px;
-          height: 250px;
-          top: 10%;
-          left: calc(50% - 100px);
+          width: 170px;
+          height: 215px;
+          top: 14%;
+          left: calc(50% - 85px);
           transform-style: preserve-3d;
           transform: perspective(1000px);
           animation: autoRun 20s linear infinite;
@@ -442,7 +504,7 @@
           inset: 0;
           transform:
             rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-            translateZ(550px);
+            translateZ(430px);
         }
 
         .testimonials-slider .item img {
@@ -456,9 +518,9 @@
           bottom: 0;
           left: 50%;
           transform: translateX(-50%);
-          width: min(1400px, 100vw);
+          width: min(1180px, 92vw);
           height: max-content;
-          padding-bottom: 100px;
+          padding-bottom: 72px;
           display: flex;
           flex-wrap: wrap;
           justify-content: space-between;
@@ -469,11 +531,11 @@
         .testimonials-model {
           background-image: url(assets/img/model.png);
           width: 100%;
-          height: 75vh;
+          height: 68vh;
           position: absolute;
           bottom: 0;
           left: 0;
-          background-size: auto 130%;
+          background-size: auto 112%;
           background-repeat: no-repeat;
           background-position: top center;
           z-index: 1;
@@ -485,38 +547,65 @@
         }
 
         @media screen and (max-width: 1023px) {
+          .testimonials-banner {
+            height: 72vh;
+          }
+
+          .testimonials-banner::before {
+            width: min(980px, 94vw);
+            top: 15%;
+            height: 76%;
+          }
+
           .testimonials-slider {
-            width: 160px;
-            height: 200px;
-            left: calc(50% - 80px);
+            width: 136px;
+            height: 176px;
+            top: 15%;
+            left: calc(50% - 68px);
           }
 
           .testimonials-slider .item {
             transform:
               rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-              translateZ(300px);
+              translateZ(250px);
+          }
+
+          .testimonials-content {
+            width: min(980px, 94vw);
+            padding-bottom: 60px;
+          }
+
+          .testimonials-model {
+            height: 56vh;
+            background-size: auto 100%;
           }
         }
 
         @media screen and (max-width: 767px) {
           .testimonials-banner {
-            height: 70vh;
+            height: 58vh;
           }
 
           .testimonials-slider {
-            width: 100px;
-            height: 150px;
-            left: calc(50% - 50px);
+            width: 88px;
+            height: 128px;
+            top: 16%;
+            left: calc(50% - 44px);
           }
 
           .testimonials-slider .item {
             transform:
               rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-              translateZ(180px);
+              translateZ(145px);
+          }
+
+          .testimonials-content {
+            width: min(100%, 94vw);
+            padding-bottom: 42px;
           }
 
           .testimonials-model {
-            height: 52vh;
+            height: 42vh;
             background-size: contain;
             background-position: bottom center;
           }
@@ -542,53 +631,6 @@
             <div class="testimonials-model"></div>
             <div class="test__shadow"></div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="articles section" id="articles">
-      <div class="container">
-        <div class="articles__header">
-          <div class="articles__summary" data-reveal>
-            <h2 class="section__title">
-              Latest <span>Articles</span>
-            </h2>
-            <p class="articles__intro">
-              Short writing pieces, learning notes, and portfolio updates in English and Sinhala.
-            </p>
-          </div>
-
-          <div class="articles__controls" data-reveal>
-            
-
-            <a href="articles.html" class="button">
-              View All Articles <i class="ri-arrow-right-line"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="articles__swiper swiper">
-          <div class="swiper-wrapper" id="articles-preview-wrapper">
-            <div class="swiper-slide">
-              <article class="article-card" data-reveal>
-                <div class="article-card__media">
-                  <img src="assets/img/projects/portfolio.png" alt="Portfolio article preview" class="article-card__image">
-                </div>
-
-                <div class="article-card__body">
-                  <div class="article-card__meta">
-                    <span>Loading</span>
-                    <span>Article</span>
-                  </div>
-                  <h3 class="article-card__title">Loading latest articles</h3>
-                  <p class="article-card__excerpt">Your latest article cards will appear here automatically.</p>
-                  <span class="article-card__cta">Read article <i class="ri-arrow-right-line"></i></span>
-                </div>
-              </article>
-            </div>
-          </div>
-
-          <div class="swiper-pagination"></div>
         </div>
       </div>
     </section>
@@ -690,11 +732,9 @@
   <script src="assets/js/scrollreveal.min.js"></script>
   <script src="assets/js/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
-  <script src="data/portfolio-local-data.js?v=20260606-2"></script>
-  <script src="assets/js/site-ui.js?v=20260606-2"></script>
-  <script src="assets/js/articles-shared.js?v=20260606-2"></script>
-  <script src="assets/js/home-page.js?v=20260606-2"></script>
-  <script src="assets/js/articles-home.js?v=20260606-2"></script>
-  <script src="assets/js/main.js?v=20260606-2"></script>
+  <script src="data/portfolio-local-data.js?v=20260712-1"></script>
+  <script src="assets/js/site-ui.js?v=20260712-1"></script>
+  <script src="assets/js/home-page.js?v=20260712-2"></script>
+  <script src="assets/js/main.js?v=20260712-1"></script>
 </body>
 </html>
