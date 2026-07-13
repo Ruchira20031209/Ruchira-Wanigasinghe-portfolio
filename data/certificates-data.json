@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-12T08:30:00.000Z",
+  "lastUpdated": "2026-07-13T14:42:34.816Z",
   "items": [
     {
       "id": 1,
@@ -11,6 +11,7 @@
       "technologies": "Java, JSP, CSS, JavaScript",
       "githubLink": "https://github.com/Ruchira20031209/SmartTutor",
       "liveLink": "",
+      "issuedBy": "",
       "images": [
         "assets/img/projects/home-tutor.png"
       ],
@@ -26,6 +27,7 @@
       "technologies": "Arduino, MQ-2 Gas Sensor, Flame Sensor, Relay Module",
       "githubLink": "",
       "liveLink": "",
+      "issuedBy": "",
       "images": [
         "assets/img/projects/fire-detection.png"
       ],
@@ -41,6 +43,7 @@
       "technologies": "Java, JSP, CSS, JavaScript, SQL",
       "githubLink": "https://github.com/Ruchira20031209/online-shopping-store",
       "liveLink": "",
+      "issuedBy": "",
       "images": [
         "assets/img/projects/e-shopping.png"
       ],
@@ -56,6 +59,7 @@
       "technologies": "HTML, CSS, JavaScript, JSON",
       "githubLink": "",
       "liveLink": "https://ruchirawanigasinghe.online/",
+      "issuedBy": "",
       "images": [
         "assets/img/projects/portfolio.png",
         "assets/img/home-perfil.png",
@@ -73,6 +77,7 @@
       "technologies": "HTML, CSS, JavaScript",
       "githubLink": "https://github.com/Ruchira20031209/Kumashaa",
       "liveLink": "https://kumashaa.vercel.app/",
+      "issuedBy": "",
       "images": [
         "assets/img/projects/kumasha-grocery.png"
       ],
@@ -88,25 +93,11 @@
       "technologies": "HTML, CSS, JavaScript",
       "githubLink": "https://github.com/Ruchira20031209/Kumasha-s-Rooms",
       "liveLink": "https://kumasha-s-rooms.vercel.app/",
+      "issuedBy": "",
       "images": [
         "assets/img/projects/kumasha-rooms.png"
       ],
       "image": "assets/img/projects/kumasha-rooms.png"
-    },
-    {
-      "id": 7,
-      "type": "project",
-      "title": "AK Traders Business Website",
-      "description": "A front-end practice project developed for a trading business concept, focusing on clean UI, responsiveness, and professional presentation.",
-      "year": 2024,
-      "category": "practice",
-      "technologies": "HTML, CSS, JavaScript",
-      "githubLink": "https://github.com/Ruchira20031209/AK-Traders",
-      "liveLink": "https://ak-traders-azure.vercel.app/",
-      "images": [
-        "assets/img/projects/hardware.png"
-      ],
-      "image": "assets/img/projects/hardware.png"
     },
     {
       "id": 1770216960925,
@@ -115,6 +106,9 @@
       "description": "Completed an online learning programme focused on the fundamentals of web design, including basic layout, design principles, and introductory web technologies.",
       "year": 2026,
       "category": "certificate",
+      "technologies": "",
+      "githubLink": "",
+      "liveLink": "",
       "issuedBy": "CODL, University of Moratuwa",
       "images": [
         "assets/img/webDev.png"
