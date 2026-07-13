@@ -1,77 +1,31 @@
 {
-  "lastUpdated": "2026-07-13T15:01:34.532Z",
+  "lastUpdated": "2026-07-13T18:02:59.702Z",
   "items": [
     {
       "id": 1,
       "type": "project",
-      "title": "Home Tutor Search & Booking System",
-      "description": "A web-based academic group project developed to help students and parents search, compare, and book home tutors. The system includes tutor profiles, subject-based search, and booking management with a user-friendly interface.",
-      "year": 2024,
+      "title": "A K Traders – Construction Hardware Business Website",
+      "description": "Designed and developed an informational website for A K Traders using Wix. The website presents the company’s construction hardware products, brand partnerships, business details, image gallery, opening hours, contact information, and map location. The project focused on creating a professional online presence that helps customers easily learn about the business and get in touch.",
+      "year": 2026,
       "category": "web",
-      "technologies": "Java, JSP, CSS, JavaScript",
-      "githubLink": "https://github.com/Ruchira20031209/SmartTutor",
+      "technologies": "Wix Web Development & Design",
+      "githubLink": "",
       "liveLink": "",
       "issuedBy": "",
       "images": [
-        "assets/img/projects/home-tutor.png"
+        "assets/img/projects/ak1.png",
+        "assets/img/projects/ak2.png",
+        "assets/img/projects/ak3.png",
+        "assets/img/projects/ak4.png",
+        "assets/img/projects/ak5.png"
       ],
-      "image": "assets/img/projects/home-tutor.png"
+      "image": "assets/img/projects/ak1.png"
     },
     {
       "id": 2,
       "type": "project",
-      "title": "Automatic Fire Detection & Extinguisher System",
-      "description": "An Arduino-based safety system designed to detect fire and smoke conditions and automatically trigger alarms and a water-based fire extinguishing mechanism. Focused on sensor integration and automation logic.",
-      "year": 2024,
-      "category": "iot",
-      "technologies": "Arduino, MQ-2 Gas Sensor, Flame Sensor, Relay Module",
-      "githubLink": "",
-      "liveLink": "",
-      "issuedBy": "",
-      "images": [
-        "assets/img/projects/fire-detection.png"
-      ],
-      "image": "assets/img/projects/fire-detection.png"
-    },
-    {
-      "id": 3,
-      "type": "project",
-      "title": "Web-Based E-Shopping Store System",
-      "description": "A software engineering group project simulating a real-world e-commerce platform with multiple user roles including admin, customer, supplier, and delivery management. Focused on system structure and role-based access.",
-      "year": 2025,
-      "category": "web",
-      "technologies": "Java, JSP, CSS, JavaScript, SQL",
-      "githubLink": "https://github.com/Ruchira20031209/online-shopping-store",
-      "liveLink": "",
-      "issuedBy": "",
-      "images": [
-        "assets/img/projects/e-shopping.png"
-      ],
-      "image": "assets/img/projects/e-shopping.png"
-    },
-    {
-      "id": 4,
-      "type": "project",
-      "title": "Personal Portfolio Website",
-      "description": "A fully hand-coded personal portfolio website developed to showcase projects, skills, and learning journey. The site is responsive across all devices and focused on clean UI and performance.",
-      "year": 2025,
-      "category": "web",
-      "technologies": "HTML, CSS, JavaScript, JSON",
-      "githubLink": "",
-      "liveLink": "https://ruchirawanigasinghe.online/",
-      "issuedBy": "",
-      "images": [
-        "assets/img/projects/portfolio.png",
-        "assets/img/home-perfil.png",
-        "assets/img/about-perfil.png"
-      ],
-      "image": "assets/img/projects/portfolio.png"
-    },
-    {
-      "id": 5,
-      "type": "project",
-      "title": "Kumasha Grocery Website",
-      "description": "A small business front-end practice website developed to improve responsive design and layout structuring skills. Includes product sections and contact information.",
+      "title": "Kumasha Grocery – Responsive Small Business Website",
+      "description": "Designed and developed a responsive front-end website for Kumasha Grocery to showcase grocery products and provide essential business and contact information. Built with HTML, CSS, and JavaScript, the project focused on responsive layouts, clear content organization, and a simple, user-friendly browsing experience across devices.",
       "year": 2024,
       "category": "practice",
       "technologies": "HTML, CSS, JavaScript",
@@ -79,15 +33,20 @@
       "liveLink": "https://kumashaa.vercel.app/",
       "issuedBy": "",
       "images": [
-        "assets/img/projects/kumasha-grocery.png"
+        "assets/img/projects/grocery1.png",
+        "assets/img/projects/grocery2.png",
+        "assets/img/projects/grocery3.png",
+        "assets/img/projects/grocery4.png",
+        "assets/img/projects/grocery5.png",
+        "assets/img/projects/grocery6.png"
       ],
-      "image": "assets/img/projects/kumasha-grocery.png"
+      "image": "assets/img/projects/grocery1.png"
     },
     {
-      "id": 6,
+      "id": 3,
       "type": "project",
-      "title": "Kumasha Rooms Website",
-      "description": "A responsive room booking practice website created to practice layout design, content organization, and basic interactivity using JavaScript.",
+      "title": "Kumasha Rooms – Responsive Room Booking Website",
+      "description": "Designed and developed a responsive front-end room booking concept for Kumasha Rooms using HTML, CSS, and JavaScript. The website presents accommodation information through clearly structured sections and includes basic JavaScript interactions for a smooth browsing experience. The project strengthened practical skills in responsive layouts, content organization, and user-focused interface design.",
       "year": 2024,
       "category": "practice",
       "technologies": "HTML, CSS, JavaScript",
@@ -95,16 +54,187 @@
       "liveLink": "https://kumasha-s-rooms.vercel.app/",
       "issuedBy": "",
       "images": [
-        "assets/img/projects/kumasha-rooms.png"
+        "assets/img/projects/rooms1.png",
+        "assets/img/projects/rooms2.png",
+        "assets/img/projects/rooms3.png",
+        "assets/img/projects/rooms4.png",
+        "assets/img/projects/rooms5.png",
+        "assets/img/projects/rooms6.png",
+        "assets/img/projects/rooms7.png",
+        "assets/img/projects/rooms8.png"
       ],
-      "image": "assets/img/projects/kumasha-rooms.png"
+      "image": "assets/img/projects/rooms1.png"
+    },
+    {
+      "id": 4,
+      "type": "project",
+      "title": "Automatic Fire Detection & Extinguisher System",
+      "description": "Developed an Arduino-based fire safety prototype as a Year 1 Semester 1 Hardware and IoT project. The system uses an MQ-2 gas sensor and flame sensor to detect smoke and fire conditions, then automatically activates an alarm and a relay-controlled water-based suppression mechanism. This project provided hands-on experience in sensor integration, automation logic, hardware control, and applying IoT concepts to a real-world safety problem.",
+      "year": 2024,
+      "category": "iot",
+      "technologies": "Arduino, MQ-2 Gas Sensor, Flame Sensor, Relay Module",
+      "githubLink": "",
+      "liveLink": "",
+      "issuedBy": "",
+      "images": [
+        "assets/img/projects/arduino1.png",
+        "assets/img/projects/arduino2.png",
+        "assets/img/projects/arduino3.png"
+      ],
+      "image": "assets/img/projects/arduino1.png"
+    },
+    {
+      "id": 5,
+      "type": "project",
+      "title": "SmartTutor – Home Tutor Search & Booking System",
+      "description": "Developed SmartTutor, a full-stack web application created as a group academic project to simplify searching for and booking qualified home tutors. The platform supports multiple user roles, authentication, session-based access control, tutor profiles, subject-based search, and booking management workflows. Contributed across front-end and back-end development, system design, debugging, documentation, and GitHub-based team feature integration, gaining practical experience with real-world web application workflows and collaborative software development.",
+      "year": 2024,
+      "category": "web",
+      "technologies": "Java, JSP, Servlets, HTML, CSS, JavaScript, MySQL, File Handling, Apache Tomcat, GitHub",
+      "githubLink": "https://github.com/Ruchira20031209/SmartTutor",
+      "liveLink": "",
+      "issuedBy": "",
+      "images": [
+        "assets/img/projects/tutor1.png",
+        "assets/img/projects/tutor2.png"
+      ],
+      "image": "assets/img/projects/tutor1.png"
+    },
+    {
+      "id": 6,
+      "type": "project",
+      "title": "NexusShop – Role-Based E-Commerce Store System",
+      "description": "Developed NexusShop, a database-backed e-commerce web application, as a Year 2 Semester 1 Software Engineering group project. The system models real-world shopping workflows through six roles: Admin, Customer, Product Manager, Supplier, Delivery Staff, and Customer Service Staff. Implemented authentication and role-based access control, product and order management, customer support tickets, MS SQL Server database design, and secure input-handling concepts. The project strengthened skills in full-stack Java web development, multi-role system design, GitHub collaboration, and team-based feature integration.",
+      "year": 2025,
+      "category": "web",
+      "technologies": "Java, JSP, Servlets, MS SQL Server, HTML, CSS, JavaScript, Apache Tomcat, GitHub",
+      "githubLink": "https://github.com/Ruchira20031209/nexusshop.git",
+      "liveLink": "",
+      "issuedBy": "",
+      "images": [
+        "assets/img/projects/eshop1.jpeg",
+        "assets/img/projects/eshop2.jpeg",
+        "assets/img/projects/eshop3.jpeg",
+        "assets/img/projects/eshop4.jpeg",
+        "assets/img/projects/eshop5.jpeg",
+        "assets/img/projects/eshop6.jpeg",
+        "assets/img/projects/eshop7.jpeg"
+      ],
+      "image": "assets/img/projects/eshop1.jpeg"
+    },
+    {
+      "id": 7,
+      "type": "project",
+      "title": "Machine Learning Car Price Prediction System",
+      "description": "Developed a machine learning regression system in Python to estimate car prices from vehicle dataset features. The workflow included data cleaning and preprocessing, feature analysis, feature engineering, model training, testing, evaluation, and iterative accuracy improvement. The project strengthened practical skills in Pandas and NumPy data processing, Scikit-learn modelling, performance evaluation, and end-to-end prediction workflows.",
+      "year": 2026,
+      "category": "other",
+      "technologies": "Python, Pandas, NumPy, Scikit-learn, Machine Learning",
+      "githubLink": "",
+      "liveLink": "",
+      "issuedBy": "",
+      "images": [
+        "assets/img/projects/ai.png"
+      ],
+      "image": "assets/img/projects/ai.png"
+    },
+    {
+      "id": 8,
+      "type": "project",
+      "title": "Secure Multiprocess TCP Client-Server Application",
+      "description": "Designed and implemented a TCP client-server application for a Year 2 Semester 1 Network Programming assignment. The C server uses fork() to handle multiple clients concurrently, while the Python client communicates through a custom length-prefixed LEN:<n> protocol that correctly handles partial TCP data. The application supports REGISTER, LOGIN, and LOGOUT commands, validates malformed input, manages sessions, and logs client IP addresses, ports, commands, and timestamps. Tested on Linux to strengthen practical knowledge of socket programming, process management, reliable protocol design, and network debugging.",
+      "year": 2026,
+      "category": "other",
+      "technologies": "C, Python, TCP/IP, Socket Programming, Linux, Client-Server Architecture, GCC",
+      "githubLink": "",
+      "liveLink": "",
+      "issuedBy": "",
+      "images": [
+        "assets/img/projects/np1.png",
+        "assets/img/projects/np2.png",
+        "assets/img/projects/np3.png"
+      ],
+      "image": "assets/img/projects/np1.png"
+    },
+    {
+      "id": 9,
+      "type": "project",
+      "title": "Cloud Security Challenges & Solutions – Research Report",
+      "description": "Prepared an individual Year 2 Semester 2 cybersecurity research report analysing the evolution, current threats, and future direction of cloud security. Examined data breaches, cloud misconfiguration, weak authentication, insider threats, data loss, DDoS attacks, insecure APIs, monitoring gaps, and human error, mapping each risk to confidentiality, integrity, and availability. Proposed controls including encryption, least-privilege access, MFA, backups, continuous monitoring, risk management, Zero Trust, CSPM, DevSecOps, and security awareness while addressing the cloud shared-responsibility model and emerging security trends.",
+      "year": 2026,
+      "category": "other",
+      "technologies": "Cloud Security, CIA Triad, MFA, IAM, Zero Trust, CSPM, DevSecOps",
+      "githubLink": "",
+      "liveLink": "",
+      "issuedBy": "",
+      "images": [
+        "assets/img/projects/ics1.png",
+        "assets/img/projects/ics2.png"
+      ],
+      "image": "assets/img/projects/ics1.png"
+    },
+    {
+      "id": 10,
+      "type": "project",
+      "title": "Python Vulnerability Scanner – Security Assessment Mini Project",
+      "description": "Built a beginner-friendly Python vulnerability scanner to understand the internal workflow of security assessment tools. The application scans authorized local or test targets for open TCP ports, performs banner grabbing, inspects HTTP responses for common SQL error disclosure patterns, displays results, and records findings through structured logging. Developed and tested on Ubuntu using Python sockets and Requests, strengthening skills in networking, basic vulnerability detection, Linux tooling, error handling, and modular security-tool design. Created strictly for educational use in safe, authorized environments.",
+      "year": 2026,
+      "category": "other",
+      "technologies": "Python, Ubuntu Linux, TCP/IP, Socket Programming, Requests, Logging",
+      "githubLink": "",
+      "liveLink": "",
+      "issuedBy": "",
+      "images": [
+        "assets/img/projects/vscanner.jpeg"
+      ],
+      "image": "assets/img/projects/vscanner.jpeg"
+    },
+    {
+      "id": 11,
+      "type": "project",
+      "title": "Password Strength Checker – Flask Security Web Application",
+      "description": "Built a beginner-friendly password strength checker as a Flask web application on Ubuntu. The tool classifies passwords as weak, medium, or strong by evaluating length, uppercase and lowercase letters, numbers, and symbols, and checks entries against a dictionary of common passwords. It also generates a SHA-256 digest to demonstrate hashing fundamentals and presents feedback through a clean, modern web interface. The project strengthened practical skills in Python, Flask, password-security concepts, file-based dictionary checks, hashing, input analysis, and user-interface design.",
+      "year": 2026,
+      "category": "other",
+      "technologies": "Python, Flask, HTML, CSS, SHA-256, Ubuntu Linux",
+      "githubLink": "",
+      "liveLink": "",
+      "issuedBy": "",
+      "images": [
+        "assets/img/projects/password1.jpeg",
+        "assets/img/projects/password2.jpeg",
+        "assets/img/projects/password3.jpeg",
+        "assets/img/projects/password4.jpeg"
+      ],
+      "image": "assets/img/projects/password1.jpeg"
+    },
+    {
+      "id": 12,
+      "type": "project",
+      "title": "Machine Learning Phishing URL Detection System",
+      "description": "Built a beginner-friendly phishing URL detection system that uses supervised machine learning to classify URLs as phishing or legitimate. The pipeline extracts URL-based features including length, special-character patterns, suspicious keywords, subdomain count, HTTPS usage, and IP-address-based domains, then trains, evaluates, and saves a Scikit-learn model for prediction. Model performance is assessed using accuracy metrics and a confusion matrix, while a Flask web application provides a modern glassmorphism-inspired interface for submitting URLs and viewing results. Developed on Ubuntu, strengthening skills in phishing analysis, feature engineering, machine-learning evaluation, model persistence, and cybersecurity-focused application design.",
+      "year": 2026,
+      "category": "other",
+      "technologies": "Python, Flask, Scikit-learn, Pandas, Matplotlib, Joblib, HTML, CSS, Ubuntu Linux",
+      "githubLink": "",
+      "liveLink": "",
+      "issuedBy": "",
+      "images": [
+        "assets/img/projects/url1.jpeg",
+        "assets/img/projects/url2.jpeg",
+        "assets/img/projects/url3.jpeg",
+        "assets/img/projects/url4.jpeg",
+        "assets/img/projects/url5.jpeg",
+        "assets/img/projects/url6.jpeg"
+      ],
+      "image": "assets/img/projects/url1.jpeg"
     },
     {
       "id": 1770216960925,
       "type": "certificate",
-      "title": "Web Design for Beginner",
+      "title": "Web Design for Beginners",
       "description": "Completed an online learning programme focused on the fundamentals of web design, including basic layout, design principles, and introductory web technologies.",
-      "year": 2025,
+      "year": 2026,
       "category": "certificate",
       "technologies": "",
       "githubLink": "",
