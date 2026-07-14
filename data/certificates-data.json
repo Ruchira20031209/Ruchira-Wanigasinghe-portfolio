@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-14T14:10:28.273Z",
+  "lastUpdated": "2026-07-14T14:10:47.159Z",
   "items": [
     {
       "id": 1,
@@ -195,7 +195,7 @@
       "title": "Password Strength Checker – Flask Security Web Application",
       "description": "Built a beginner-friendly password strength checker as a Flask web application on Ubuntu. The tool classifies passwords as weak, medium, or strong by evaluating length, uppercase and lowercase letters, numbers, and symbols, and checks entries against a dictionary of common passwords. It also generates a SHA-256 digest to demonstrate hashing fundamentals and presents feedback through a clean, modern web interface. The project strengthened practical skills in Python, Flask, password-security concepts, file-based dictionary checks, hashing, input analysis, and user-interface design.",
       "year": 2026,
-      "category": "other",
+      "category": "practice",
       "technologies": "Python, Flask, HTML, CSS, SHA-256, Ubuntu Linux",
       "githubLink": "",
       "liveLink": "",
