@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-14T14:10:47.159Z",
+  "lastUpdated": "2026-07-14T14:11:21.039Z",
   "items": [
     {
       "id": 1,
@@ -179,13 +179,14 @@
       "title": "Python Vulnerability Scanner – Security Assessment Mini Project",
       "description": "Built a beginner-friendly Python vulnerability scanner to understand the internal workflow of security assessment tools. The application scans authorized local or test targets for open TCP ports, performs banner grabbing, inspects HTTP responses for common SQL error disclosure patterns, displays results, and records findings through structured logging. Developed and tested on Ubuntu using Python sockets and Requests, strengthening skills in networking, basic vulnerability detection, Linux tooling, error handling, and modular security-tool design. Created strictly for educational use in safe, authorized environments.",
       "year": 2026,
-      "category": "other",
+      "category": "practice",
       "technologies": "Python, Ubuntu Linux, TCP/IP, Socket Programming, Requests, Logging",
       "githubLink": "",
       "liveLink": "",
       "issuedBy": "",
       "images": [
-        "assets/img/projects/vscanner.jpeg"
+        "assets/img/projects/vscanner.jpeg",
+        "assets/img/projects/vscanner1.jpeg"
       ],
       "image": "assets/img/projects/vscanner.jpeg"
     },
