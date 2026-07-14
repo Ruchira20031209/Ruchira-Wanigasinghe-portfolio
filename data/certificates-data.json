@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-07-14T14:05:11.893Z",
+  "lastUpdated": "2026-07-14T14:07:27.975Z",
   "items": [
     {
       "id": 1,
       "type": "project",
       "title": "A K Traders – Construction Hardware Business Website",
       "description": "Designed and developed an informational website for A K Traders using Wix. The website presents the company’s construction hardware products, brand partnerships, business details, image gallery, opening hours, contact information, and map location. The project focused on creating a professional online presence that helps customers easily learn about the business and get in touch.",
-      "year": 2026,
-      "category": "web",
+      "year": 2022,
+      "category": "practice",
       "technologies": "Wix Web Development & Design",
       "githubLink": "",
-      "liveLink": "",
+      "liveLink": "https://ruchirawanigasingh.wixsite.com/aktraders",
       "issuedBy": "",
       "images": [
         "assets/img/projects/ak1.png",
