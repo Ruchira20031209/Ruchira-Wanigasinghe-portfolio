@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-14T14:11:21.039Z",
+  "lastUpdated": "2026-07-14T14:12:09.289Z",
   "items": [
     {
       "id": 1,
@@ -169,7 +169,8 @@
       "issuedBy": "",
       "images": [
         "assets/img/projects/ics1.png",
-        "assets/img/projects/ics2.png"
+        "assets/img/projects/ics2.png",
+        "assets/img/projects/ics3.png"
       ],
       "image": "assets/img/projects/ics1.png"
     },
