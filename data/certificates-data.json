@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-07-14T14:07:27.975Z",
+  "lastUpdated": "2026-07-14T14:10:28.273Z",
   "items": [
     {
       "id": 1,
       "type": "project",
       "title": "A K Traders – Construction Hardware Business Website",
       "description": "Designed and developed an informational website for A K Traders using Wix. The website presents the company’s construction hardware products, brand partnerships, business details, image gallery, opening hours, contact information, and map location. The project focused on creating a professional online presence that helps customers easily learn about the business and get in touch.",
-      "year": 2022,
-      "category": "practice",
+      "year": 2026,
+      "category": "web",
       "technologies": "Wix Web Development & Design",
       "githubLink": "",
-      "liveLink": "https://ruchirawanigasingh.wixsite.com/aktraders",
+      "liveLink": "",
       "issuedBy": "",
       "images": [
         "assets/img/projects/ak1.png",
@@ -214,7 +214,7 @@
       "title": "Machine Learning Phishing URL Detection System",
       "description": "Built a beginner-friendly phishing URL detection system that uses supervised machine learning to classify URLs as phishing or legitimate. The pipeline extracts URL-based features including length, special-character patterns, suspicious keywords, subdomain count, HTTPS usage, and IP-address-based domains, then trains, evaluates, and saves a Scikit-learn model for prediction. Model performance is assessed using accuracy metrics and a confusion matrix, while a Flask web application provides a modern glassmorphism-inspired interface for submitting URLs and viewing results. Developed on Ubuntu, strengthening skills in phishing analysis, feature engineering, machine-learning evaluation, model persistence, and cybersecurity-focused application design.",
       "year": 2026,
-      "category": "other",
+      "category": "practice",
       "technologies": "Python, Flask, Scikit-learn, Pandas, Matplotlib, Joblib, HTML, CSS, Ubuntu Linux",
       "githubLink": "",
       "liveLink": "",
