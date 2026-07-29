@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-14T14:12:46.058Z",
+  "lastUpdated": "2026-07-29T14:12:46.058Z",
   "items": [
     {
       "id": 1,
@@ -247,6 +247,27 @@
         "assets/img/webDev.png"
       ],
       "image": "assets/img/webDev.png"
+    },
+    {
+      "id": 13,
+      "type": "design",
+      "title": "Some of my Designs",
+      "description": "",
+      "year": 2024,
+      "category": "design",
+      "technologies": "Canva",
+      "githubLink": "",
+      "liveLink": "",
+      "issuedBy": "",
+      "images": [
+        "assets/img/projects/D1.png",
+        "assets/img/projects/D2.png",
+        "assets/img/projects/D3.png",
+        "assets/img/projects/D4.png",
+        "assets/img/projects/D5.png",
+        "assets/img/projects/D6.png"
+      ],
+      "image": "assets/img/projects/D1.png"
     }
   ]
 }
